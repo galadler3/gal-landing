@@ -815,7 +815,7 @@ body.night-mode .deco{ opacity:.4; }
 </main>
 
 <script>
-var PAYBOX_URL = "#";
+var PAYBOX_URL = "https://links.payboxapp.com/A8omjobsw2b";
 var SONGS_URL = "https://script.google.com/macros/s/AKfycbzjPZs0x9dH-Xe-R_t6iLxlhG1h6Dv53WQbpAOVn0cO8zQW0i7n7gZNUVBc2Q4zr8ClxA/exec";
 var SONGS_DEADLINE = new Date('2026-06-05T23:59:59+03:00').getTime();
 
@@ -1112,15 +1112,15 @@ function renderSongsList(data){
       } catch(err){ console.warn('Songs submit failed:', err); }
     }
 
-    var msg = '🌴 מאשר/ת הגעה לגגלר 30!\n\n' +
-              '👤 שם: ' + name + '\n' +
-              '📱 טלפון: ' + phone;
+    var msg = '\u{1F334} מאשר/ת הגעה לגגלר 30!\n\n' +
+              '\u{1F464} שם: ' + name + '\n' +
+              '\u{1F4F1} טלפון: ' + phone;
     if (songs.length){
-      msg += '\n\n🎵 שירים שאני אשמח לשמוע:\n' + songs.map(function(s){ return '• ' + s; }).join('\n');
+      msg += '\n\n\u{1F3B5} שירים שאני אשמח לשמוע:\n' + songs.map(function(s){ return '• ' + s; }).join('\n');
     }
-    msg += '\n\n🍹 נתראה על הגג!';
+    msg += '\n\n\u{1F379} נתראה על הגג!';
 
-    var url = 'https://wa.me/972547523288?text=' + encodeURIComponent(msg);
+    var url = 'https://api.whatsapp.com/send?phone=972547523288&text=' + encodeURIComponent(msg);
     window.open(url, '_blank', 'noopener');
 
     if (window.__galerConfetti) window.__galerConfetti(70);
