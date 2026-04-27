@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#ff6f47" />
+<meta name="theme-color" content="#ffd6a8" />
 <title>גגלר 30 — Tropical Rooftop Party</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌴%3C/text%3E%3C/svg%3E" />
 <meta name="description" content="גגלר 30 — מסיבת גג טרופית בתל אביב. 06.06.26, 16:30. חיים ויטאל 12, פלורנטין." />
@@ -52,12 +52,17 @@
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth; background:#5b2a59;}
 body{
   font-family:"Heebo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color:var(--ink);
   background:
+    linear-gradient(180deg, #5b2a59 0%, #5b2a59 100%),
     radial-gradient(120% 60% at 50% 0%, #ffd6a8 0%, #ffb286 22%, #ff8a64 42%, #ff6f47 60%, #c8506b 80%, #5b2a59 100%);
+  background:
+    radial-gradient(120% 60% at 50% 0%, #ffd6a8 0%, #ffb286 22%, #ff8a64 42%, #ff6f47 60%, #c8506b 80%, #5b2a59 100%) no-repeat,
+    #5b2a59;
+  background-attachment: fixed, fixed;
   min-height:100vh;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
@@ -165,17 +170,20 @@ body::before{
 .kicker.big-date{
   font-family:"Heebo", sans-serif;
   font-weight:900;
-  font-size: clamp(22px, 6vw, 28px);
+  font-size: clamp(18px, 4.8vw, 24px);
   background: linear-gradient(135deg, var(--coral) 0%, var(--coral-deep) 50%, var(--dusk) 100%);
   -webkit-background-clip:text; background-clip:text; color:transparent;
-  padding: 2px 6px;
-  letter-spacing:.5px;
-  vertical-align: -2px;
+  padding: 2px 4px;
+  letter-spacing:.3px;
+  vertical-align: -1px;
+  white-space: nowrap;
 }
 
-.details{ display:grid; gap:12px; grid-template-columns: 1fr 1fr;}
+.details{ display:grid; gap:12px; grid-template-columns: repeat(10, 1fr);}
+.details > .detail:not([style*="grid-column"]):not(.detail--wide){ grid-column: span 5; }
 .detail{
   position:relative;
+  text-align:center;
   border-radius:var(--radius-md);
   padding:16px 14px 14px;
   background:linear-gradient(160deg, #fff 0%, #fff4e3 100%);
@@ -193,6 +201,7 @@ body::before{
 }
 .detail .ico{
   width:38px; height:38px; border-radius:12px;
+  margin-left:auto; margin-right:auto;
   display:grid; place-items:center;
   font-size:20px;
   background:linear-gradient(135deg, var(--coral), var(--gold));
@@ -423,6 +432,125 @@ a{ color: var(--coral-deep); }
 .btn--share{
   background:linear-gradient(135deg,#34b7f1 0%, #25D366 100%); color:#fff;
 }
+
+/* RSVP form */
+.rsvp-form{ display:grid; gap:10px; }
+.rsvp-form__row{ display:grid; grid-template-columns: 1fr 1fr; gap:8px; }
+@media (max-width:380px){ .rsvp-form__row{ grid-template-columns: 1fr; } }
+.rsvp-form input{
+  width:100%; padding:13px 14px; border-radius:14px;
+  border:1.5px solid rgba(58,31,63,.15);
+  background:#fff; color:var(--ink);
+  font-family:"Heebo", sans-serif; font-size:15px; font-weight:500;
+  transition: border-color .2s ease, box-shadow .2s ease;
+  box-shadow: 0 2px 6px rgba(58,31,63,.05);
+  text-align:right;
+}
+.rsvp-form input:focus{
+  outline:none; border-color: var(--coral);
+  box-shadow: 0 0 0 3px rgba(255,111,71,.15);
+}
+.rsvp-form input::placeholder{ color: rgba(75,47,58,.4); font-weight:500; }
+.rsvp-form input:invalid:not(:placeholder-shown){ border-color: #e6492a; }
+
+/* Songs block */
+.songs-block{ display:grid; gap:8px; margin-top:4px; }
+.songs-label{
+  font-family:"Heebo", sans-serif; font-size:14px; font-weight:600;
+  color: var(--ink); display:flex; align-items:center; gap:6px;
+  margin-bottom:2px;
+}
+.songs-label small{ font-weight:400; opacity:.65; font-size:12px; }
+.songs-label .em{ font-size:16px; }
+.song-add{
+  background:transparent; border:1.5px dashed rgba(58,31,63,.25);
+  color: var(--ink); padding:9px 12px; border-radius:12px;
+  font-family:"Heebo", sans-serif; font-size:13px; font-weight:600;
+  cursor:pointer; transition: all .2s ease;
+}
+.song-add:hover{ border-color: var(--coral); color: var(--coral); background: rgba(255,111,71,.05); }
+.song-add[hidden]{ display:none; }
+.songs-deadline{
+  font-family:"Heebo", sans-serif; font-size:12.5px; font-weight:500;
+  color: rgba(75,47,58,.7); text-align:center; margin:4px 0 0;
+  line-height:1.5;
+}
+
+/* Songs picked list */
+.songs-list-card{
+  background: rgba(255,255,255,.85);
+  border-radius:18px; padding:0; overflow:hidden;
+  border:1.5px solid rgba(255,111,71,.18);
+  box-shadow: 0 4px 14px rgba(58,31,63,.08);
+}
+.songs-list-toggle{
+  width:100%; background:transparent; border:0;
+  padding:14px 16px; display:flex; align-items:center; justify-content:space-between;
+  cursor:pointer; font-family:"Heebo", sans-serif;
+  color: var(--ink); font-size:15px; font-weight:700;
+  transition: background .15s ease;
+}
+.songs-list-toggle:hover{ background: rgba(255,111,71,.04); }
+.songs-list-title{ display:flex; align-items:center; gap:8px; }
+.songs-list-title .em{ font-size:18px; }
+.songs-list-count{
+  background: linear-gradient(135deg, #ff6f47, #ff9050);
+  color:#fff; font-size:12px; font-weight:700;
+  padding:2px 9px; border-radius:999px; min-width:24px; text-align:center;
+}
+.songs-list-chev{ width:18px; height:18px; transition: transform .25s ease; opacity:.55; }
+.songs-list-toggle[aria-expanded="true"] .songs-list-chev{ transform: rotate(180deg); }
+.songs-list-body{ padding:6px 14px 14px; border-top:1px solid rgba(58,31,63,.08); }
+.songs-list-body[hidden]{ display:none; }
+.songs-list{ list-style:none; padding:0; margin:0; max-height: 280px; overflow-y:auto; }
+.songs-list li{
+  display:flex; align-items:center; gap:10px;
+  padding:10px 4px; border-bottom:1px dashed rgba(58,31,63,.08);
+  font-family:"Heebo", sans-serif; font-size:14px; color: var(--ink);
+}
+.songs-list li:last-child{ border-bottom:0; }
+.songs-list li .rank{
+  font-size:13px; font-weight:700; color: rgba(75,47,58,.5);
+  min-width:22px; text-align:center;
+}
+.songs-list li.top5 .rank{ font-size:18px; }
+.songs-list li.top5{ font-weight:600; }
+.songs-list li .song-name{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.songs-list li .song-count{
+  font-size:12.5px; font-weight:700; color: var(--coral);
+  background: rgba(255,111,71,.1); padding:3px 9px; border-radius:999px;
+  white-space:nowrap;
+}
+.songs-list-empty{
+  text-align:center; font-family:"Heebo", sans-serif; font-size:13.5px;
+  color: rgba(75,47,58,.6); padding:18px 8px 8px; margin:0;
+}
+
+/* Closed state */
+.songs-block.is-closed input,
+.songs-block.is-closed .song-add{ pointer-events:none; opacity:.5; }
+.songs-block.is-closed .songs-deadline::before{
+  content:'🔒 ההצעות נסגרו — תודה לכל מי שהשתתף!'; display:block;
+  color: var(--coral); font-weight:700; margin-bottom:4px;
+}
+.songs-block.is-closed .songs-deadline > *,
+.songs-block.is-closed .songs-deadline{ font-size:12.5px; }
+
+/* Night mode */
+body.night-mode .songs-list-card{ background: rgba(255,255,255,.92); }
+
+/* Night mode (auto after 19:00) */
+body.night-mode{
+  background:
+    radial-gradient(120% 60% at 50% 0%, #4a2870 0%, #3a1f3f 30%, #1f0f33 60%, #0a0420 100%) no-repeat,
+    #0a0420;
+  background-attachment: fixed, fixed;
+}
+body.night-mode html, html.night-mode{ background:#4a2870; }
+body.night-mode .note,
+body.night-mode .signoff,
+body.night-mode .signature{ text-shadow: 0 2px 12px rgba(0,0,0,.6); }
+body.night-mode .deco{ opacity:.4; }
 </style>
 </head>
 <body>
@@ -456,7 +584,7 @@ a{ color: var(--coral-deep); }
 
   <section class="card intro card--tappable" aria-label="פתיח">
     <p>
-      כמיטב המסורת — שקיעה על הגג, מוזיקה טובה עם <strong>DJ Edry</strong>, דרינקים, פיצות,
+      כמיטב המסורת — שקיעה על הגג, מוזיקה טובה עם <strong>DJ Edry</strong>, אלכוהול, פיצות,
       אנשים יפים ואווירה של קיץ בתל אביב.
     </p>
     <p>
@@ -468,13 +596,13 @@ a{ color: var(--coral-deep); }
   </section>
 
   <section class="card card--solid" aria-label="פרטים">
-    <h2 class="h">📍 הפרטים החשובים <span class="pill">save the date</span></h2>
+    <h2 class="h">📍 הפרטים החשובים <span class="pill" style="font-size: 16px">save the date</span></h2>
 
     <div class="details">
       <div class="detail">
         <div class="ico" aria-hidden="true">📅</div>
         <div class="label">תאריך ושעה</div>
-        <div class="value">שבת · 06.06.26 <small>16:30 – 23:00</small></div>
+        <div class="value">שבת · 06.06.26 <small>23:00 – 16:30</small></div>
       </div>
       <div class="detail">
         <div class="ico" aria-hidden="true">👕</div>
@@ -494,13 +622,24 @@ a{ color: var(--coral-deep); }
       <div class="detail detail--wide" style="text-align:center; padding:12px;">
         <div id="weather-display" class="weather-pill">⏳ טוען תחזית...</div>
       </div>
-      <div class="detail detail--wide map-wrap-detail">
+      <div class="detail map-wrap-detail" style="grid-column: span 7;">
         <iframe src="https://maps.google.com/maps?q=%D7%97%D7%99%D7%99%D7%9D+%D7%95%D7%99%D7%98%D7%90%D7%9C+12+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91&output=embed&hl=he" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="חיים ויטאל 12, תל אביב"></iframe>
       </div>
-      <div class="detail detail--wide" style="text-align:center; padding:14px;">
-        <a class="btn btn--pay btn--inline paybox-link" href="#" target="_blank" rel="noopener" style="margin:0;">
-          <span class="em">💳</span> תשלום בקבוצת פייבוקס
-        </a>
+      <div class="detail" style="grid-column: span 3; padding:14px 12px;">
+        <div class="ico" aria-hidden="true">🅿️</div>
+        <div class="label">חניה מומלצת</div>
+        <div class="value" style="font-size:14px;">חניון ליבר <small>אחוזת החוף
+9 דקות הליכה</small></div>
+      </div>
+      <div class="detail detail--wide" style="padding:12px;">
+        <div class="cta-row" style="margin:0;">
+          <a class="btn btn--waze" href="https://waze.com/ul?q=%D7%97%D7%99%D7%99%D7%9D%20%D7%95%D7%99%D7%98%D7%90%D7%9C%2012%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&navigate=yes" target="_blank" rel="noopener">
+            <span class="em">🚗</span> ניווט לאירוע
+          </a>
+          <a class="btn btn--waze" href="https://waze.com/ul?q=%D7%97%D7%A0%D7%99%D7%95%D7%9F%20%D7%9C%D7%99%D7%91%D7%A8%20%D7%90%D7%97%D7%95%D7%96%D7%AA%20%D7%94%D7%97%D7%95%D7%A3%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&navigate=yes" target="_blank" rel="noopener">
+            <span class="em">🅿️</span> ניווט לחניון
+          </a>
+        </div>
       </div>
     </div>
 
@@ -516,50 +655,68 @@ a{ color: var(--coral-deep); }
   <section class="card" aria-label="צ'קליסט">
     <h2 class="h">✅ מה אני צריך מכם עכשיו?</h2>
     <ul class="checks" id="checklist">
-      <li><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">לשריין את התאריך ביומן</span></li>
-      <li><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">להתחיל להתרגש</span></li>
-      <li><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">לדאוג לביגוד מתאים</span></li>
-      <li><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">ולהמתין בסבלנות 😏</span></li>
+      <li data-emoji="📅"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">לשריין את התאריך ביומן</span></li>
+      <li data-emoji="🤩"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">להתחיל להתרגש</span></li>
+      <li data-emoji="🌴"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">לדאוג לביגוד מתאים</span></li>
+      <li data-emoji="🍹"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">ולהמתין בסבלנות 😏</span></li>
     </ul>
   </section>
 
   <section class="card card--solid" aria-label="פעולות">
-    <h2 class="h">🎟️ תאשרו הגעה</h2>
+    <h2 class="h">🎟️ אשרו הגעה</h2>
 
     <div class="cta">
+      <form class="rsvp-form" id="rsvp-form" autocomplete="on">
+        <div class="rsvp-form__row">
+          <input type="text" id="rsvp-name" name="name" required placeholder="שם מלא" autocomplete="name" />
+          <input type="tel" id="rsvp-phone" name="phone" required placeholder="טלפון" inputmode="tel" autocomplete="tel" pattern="[0-9\-\+\s]{8,}" />
+        </div>
+
+        <div class="songs-block" id="songs-block">
+          <label class="songs-label" for="song-1">
+            <span class="em">🎵</span> שיר שחייב להתנגן <small>(אופציונלי · עד 3)</small>
+          </label>
+          <input type="text" id="song-1" name="song1" placeholder="שם השיר / אמן" maxlength="120" />
+          <input type="text" id="song-2" name="song2" placeholder="שיר שני" maxlength="120" class="song-extra" hidden />
+          <input type="text" id="song-3" name="song3" placeholder="שיר שלישי" maxlength="120" class="song-extra" hidden />
+          <button type="button" class="song-add" id="song-add">+ עוד שיר</button>
+          <p class="songs-deadline">5 השירים הכי מבוקשים — DJ Edry ישלב אותם במסיבה 🔥<br>ניתן להוסיף עד 05.06.26</p>
+        </div>
+        <button class="btn btn--wa" id="wa-btn" type="submit" data-confetti="1" style="font-family: Heebo">
+          <span class="em">💬</span> אשרו הגעה בוואטסאפ
+        </button>
+      </form>
+
+      <div class="songs-list-card" id="songs-list-card" hidden>
+        <button type="button" class="songs-list-toggle" id="songs-list-toggle" aria-expanded="false">
+          <span class="songs-list-title">
+            <span class="em">🎧</span> השירים של המסיבה
+            <span class="songs-list-count" id="songs-list-count">0</span>
+          </span>
+          <svg class="songs-list-chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6,9 12,15 18,9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="songs-list-body" id="songs-list-body" hidden>
+          <ol class="songs-list" id="songs-list"></ol>
+          <p class="songs-list-empty" id="songs-list-empty" hidden>עדיין אין הצעות — תהיו הראשונים 🎶</p>
+        </div>
+      </div>
+
       <a class="btn btn--pay paybox-link" href="#" target="_blank" rel="noopener" data-confetti="1">
         <span class="em">💳</span> תשלום בקבוצת פייבוקס · 100 ₪
       </a>
 
-      <a class="btn btn--wa" id="wa-btn" data-confetti="1"
-         href="#"
-         target="_blank" rel="noopener">
-        <span class="em">💬</span> אשרו הגעה בוואטסאפ
-      </a>
-
       <div class="cta-row">
-        <a class="btn btn--cal" id="ics-btn" href="#" download="galer-30.ics">
-          <span class="em">📅</span> הוסף ליומן
-        </a>
         <a class="btn btn--cal" id="gcal-btn"
            href="#"
            target="_blank" rel="noopener">
           <span class="em">🗓️</span> Google Calendar
-        </a>
-      </div>
-
-      <div class="cta-row">
-        <a class="btn btn--waze"
-           href="https://waze.com/ul?q=%D7%97%D7%99%D7%99%D7%9D%20%D7%95%D7%99%D7%98%D7%90%D7%9C%2012%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&navigate=yes"
-           target="_blank" rel="noopener">
-          <span class="em">🚗</span> ניווט ב-Waze
         </a>
         <button class="btn btn--ghost" id="copy-addr" type="button">
           <span class="em">📋</span> <span id="copy-addr-text" style="font-family: Heebo">העתק כתובת</span>
         </button>
       </div>
 
-      <button class="btn btn--share" id="wa-share-btn" type="button">
+      <button class="btn btn--share" id="wa-share-btn" type="button" style="font-family: Heebo">
         <span class="em">📤</span> שתף את ההזמנה בוואטסאפ
       </button>
     </div>
@@ -571,10 +728,91 @@ a{ color: var(--coral-deep); }
   </p>
 
   <p class="signoff" style="font-family: Heebo">נתראה על הגג 🍹🌅🎶</p>
+  <p class="signature" style="font-family: 'Pacifico', cursive; text-align:center; color:#fff; opacity:.85; margin-top:8px; font-size:18px; text-shadow: 0 2px 8px rgba(58,31,63,.45);">— גל אדלר</p>
 </main>
 
 <script>
 var PAYBOX_URL = "#";
+var SONGS_URL = "https://script.google.com/macros/s/AKfycbw32yhLYYSKxZqU5Gn27dDbJf-fQuwX-PFkTO3SjPqlw9zoEu5qSoybxVq8s6zGlFM9AQ/exec";
+var SONGS_DEADLINE = new Date('2026-06-05T23:59:59+03:00').getTime();
+
+/* ===== Songs: fetch + render aggregated list ===== */
+function loadSongsList(){
+  var card = document.getElementById('songs-list-card');
+  if (!card || !SONGS_URL) return;
+  fetch(SONGS_URL, { method:'GET', redirect:'follow', cache:'no-store' })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (!data || !data.ok) return;
+      renderSongsList(data);
+    })
+    .catch(function(){ /* offline / not deployed yet — silent */ });
+}
+
+function renderSongsList(data){
+  var card = document.getElementById('songs-list-card');
+  var listEl = document.getElementById('songs-list');
+  var emptyEl = document.getElementById('songs-list-empty');
+  var countEl = document.getElementById('songs-list-count');
+  if (!card || !listEl) return;
+
+  var songs = (data && data.songs) || [];
+  card.hidden = false;
+
+  // Update count badge
+  countEl.textContent = data.total_submissions || songs.length || 0;
+
+  // Empty state
+  if (!songs.length){
+    listEl.innerHTML = '';
+    emptyEl.hidden = false;
+    return;
+  }
+  emptyEl.hidden = true;
+
+  // Render
+  var html = songs.map(function(s, i){
+    var isTop5 = i < 5;
+    var rank = isTop5 ? '👑' : (i+1);
+    var name = (s.name || '').replace(/[<>&]/g, function(c){ return {'<':'&lt;','>':'&gt;','&':'&amp;'}[c]; });
+    return '<li class="' + (isTop5 ? 'top5' : '') + '">' +
+             '<span class="rank">' + rank + '</span>' +
+             '<span class="song-name">' + name + '</span>' +
+             '<span class="song-count">🔥 ' + s.count + 'x</span>' +
+           '</li>';
+  }).join('');
+  listEl.innerHTML = html;
+
+  // Closed-state UI
+  if (data.closed){
+    var block = document.getElementById('songs-block');
+    if (block) block.classList.add('is-closed');
+  }
+}
+
+(function(){
+  // Toggle expand/collapse
+  var toggle = document.getElementById('songs-list-toggle');
+  var body = document.getElementById('songs-list-body');
+  if (toggle && body){
+    toggle.addEventListener('click', function(){
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      body.hidden = expanded;
+    });
+  }
+
+  // Lock songs UI past deadline
+  if (Date.now() >= SONGS_DEADLINE){
+    var block = document.getElementById('songs-block');
+    if (block) block.classList.add('is-closed');
+  }
+
+  // Fetch on load + refocus + every 60s
+  loadSongsList();
+  window.addEventListener('focus', loadSongsList);
+  setInterval(loadSongsList, 60000);
+})();
 
 (function(){
   if (!PAYBOX_URL || PAYBOX_URL === "#") return;
@@ -660,7 +898,9 @@ var PAYBOX_URL = "#";
         li.setAttribute('aria-checked', on ? 'true' : 'false');
         if (on && window.__galerMiniConfetti){
           var rect = li.getBoundingClientRect();
-          window.__galerMiniConfetti(rect.right - 18, rect.top + rect.height/2);
+          var emoji = li.getAttribute('data-emoji');
+          window.__galerMiniConfetti(rect.right - 18, rect.top + rect.height/2, emoji);
+          if (navigator.vibrate) navigator.vibrate(15);
         }
         if (on){
           var allDone = list.querySelectorAll('li.done').length === items.length;
@@ -718,10 +958,72 @@ var PAYBOX_URL = "#";
 })();
 
 (function(){
-  var a = document.getElementById('wa-btn');
-  if (!a) return;
-  var msg = 'מאשר/ת הגעה ל-גגלר 30! 🌴🍹';
-  a.href = 'https://wa.me/972547523288?text=' + encodeURIComponent(msg);
+  var form = document.getElementById('rsvp-form');
+  var btn = document.getElementById('wa-btn');
+  if (!form || !btn) return;
+
+  // Restore saved values
+  try {
+    var saved = JSON.parse(localStorage.getItem('galer-rsvp') || '{}');
+    if (saved.name) document.getElementById('rsvp-name').value = saved.name;
+    if (saved.phone) document.getElementById('rsvp-phone').value = saved.phone;
+  } catch(e){}
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('rsvp-name').value.trim();
+    var phone = document.getElementById('rsvp-phone').value.trim();
+    if (!name || !phone) return;
+
+    // Collect songs (1-3, only non-empty)
+    var songs = [];
+    ['song-1','song-2','song-3'].forEach(function(id){
+      var v = (document.getElementById(id) && document.getElementById(id).value || '').trim();
+      if (v) songs.push(v);
+    });
+
+    try { localStorage.setItem('galer-rsvp', JSON.stringify({name:name, phone:phone})); } catch(e){}
+
+    // Fire-and-forget submission to Apps Script (if configured) — does NOT block WhatsApp open
+    if (typeof SONGS_URL !== 'undefined' && SONGS_URL && songs.length){
+      try {
+        fetch(SONGS_URL, {
+          method:'POST',
+          mode:'no-cors', // Apps Script accepts; we won't read the response, that's fine
+          headers:{'Content-Type':'text/plain;charset=utf-8'},
+          body: JSON.stringify({ name:name, phone:phone, songs:songs })
+        }).then(function(){
+          // refresh list 1.5s later
+          setTimeout(loadSongsList, 1500);
+        }).catch(function(){});
+      } catch(err){}
+    }
+
+    var msg = '🌴 מאשר/ת הגעה ל-גגלר 30!\n\n' +
+              '👤 שם: ' + name + '\n' +
+              '📱 טלפון: ' + phone;
+    if (songs.length){
+      msg += '\n\n🎵 שירים שאני רוצה לשמוע:\n' + songs.map(function(s){ return '• ' + s; }).join('\n');
+    }
+    msg += '\n\n🍹 נתראה על הגג!';
+
+    var url = 'https://wa.me/972547523288?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank', 'noopener');
+
+    if (window.__galerConfetti) window.__galerConfetti(70);
+    if (navigator.vibrate) navigator.vibrate([20, 60, 20]);
+  });
+
+  // Reveal extra song fields on demand
+  var addBtn = document.getElementById('song-add');
+  var extras = Array.prototype.slice.call(document.querySelectorAll('.song-extra'));
+  if (addBtn && extras.length){
+    addBtn.addEventListener('click', function(){
+      var next = extras.find(function(el){ return el.hidden; });
+      if (next){ next.hidden = false; next.focus(); }
+      if (extras.every(function(el){ return !el.hidden; })) addBtn.hidden = true;
+    });
+  }
 })();
 
 (function(){
@@ -750,6 +1052,7 @@ var PAYBOX_URL = "#";
     try {
       await navigator.clipboard.writeText(addr);
       lbl.textContent = 'הועתק! ✅';
+      if (navigator.vibrate) navigator.vibrate(20);
       if (window.__galerMiniConfetti){
         var rect = btn.getBoundingClientRect();
         window.__galerMiniConfetti(rect.left + rect.width/2, rect.top + rect.height/2);
@@ -802,7 +1105,9 @@ var PAYBOX_URL = "#";
         vrot: (Math.random() - 0.5) * 0.3,
         size: 6 + Math.random()*8,
         color: COLORS[(Math.random()*COLORS.length)|0],
-        shape: SHAPES[(Math.random()*SHAPES.length)|0],
+        shape: opts.emoji ? 'emoji' : SHAPES[(Math.random()*SHAPES.length)|0],
+        emoji: opts.emoji || null,
+        emojiSize: 18 + Math.random()*12,
         life: 0,
         maxLife: 90 + Math.random() * 60,
         opacity: 1
@@ -839,6 +1144,11 @@ var PAYBOX_URL = "#";
         ctx.beginPath(); ctx.arc(0,0, p.size*0.5, 0, Math.PI*2); ctx.fill();
       } else if (p.shape === 'strip'){
         ctx.fillRect(-p.size*0.6, -p.size*0.18, p.size*1.2, p.size*0.36);
+      } else if (p.shape === 'emoji' && p.emoji){
+        ctx.font = p.emojiSize + 'px serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(p.emoji, 0, 0);
       } else {
         ctx.fillRect(-p.size*0.5, -p.size*0.5, p.size, p.size);
       }
@@ -858,9 +1168,9 @@ var PAYBOX_URL = "#";
     spawn(w*0.5, -10, Math.floor(count/3), { angle: Math.PI/2, spread: Math.PI, velMin: 2, velMax: 6 });
   };
 
-  window.__galerMiniConfetti = function(x, y){
+  window.__galerMiniConfetti = function(x, y, emoji){
     if (!animationsOn) return;
-    spawn(x, y, 14, { angle: -Math.PI/2, spread: Math.PI*1.4, velMin: 3, velMax: 8 });
+    spawn(x, y, emoji ? 10 : 14, { angle: -Math.PI/2, spread: Math.PI*1.4, velMin: 3, velMax: 8, emoji: emoji || null });
   };
 
   window.__galerSetAnimations = function(on){
@@ -923,7 +1233,22 @@ var PAYBOX_URL = "#";
 (function(){
   var el = document.getElementById('weather-display');
   if (!el) return;
+  var wrap = el.closest('.detail');
+  var EVENT_UTC = Date.UTC(2026, 5, 6, 13, 30, 0);
+  var WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+  var now = Date.now();
   var fallback = '☀️ ביוני בת״א בד״כ 24-28°, שמש מלאה';
+  // After event ends — hide entirely
+  if (now > EVENT_UTC + 6 * 60 * 60 * 1000){
+    if (wrap) wrap.style.display = 'none';
+    return;
+  }
+  // More than 7 days out — show climate average + "will update closer to event"
+  if (now < EVENT_UTC - WEEK_MS){
+    el.innerHTML = fallback + ' <small style="display:block;margin-top:4px;opacity:.75;font-weight:500;">תחזית מדויקת תתעדכן 7 ימים לפני האירוע</small>';
+    return;
+  }
+  // Within 7 days — fetch real forecast
   fetch('https://api.open-meteo.com/v1/forecast?latitude=32.0556&longitude=34.7706&daily=weather_code,temperature_2m_max,temperature_2m_min&start_date=2026-06-06&end_date=2026-06-06&timezone=Asia%2FJerusalem')
     .then(function(r){ return r.json(); })
     .then(function(d){
@@ -954,6 +1279,31 @@ var PAYBOX_URL = "#";
       window.__galerMiniConfetti(rect.left + rect.width/2, rect.top + rect.height/2);
     }
   });
+})();
+
+/* ===== First visit: confetti welcome (once per user) ===== */
+(function(){
+  try {
+    if (localStorage.getItem('galer-visited')) return;
+    localStorage.setItem('galer-visited', '1');
+  } catch(e){}
+  setTimeout(function(){
+    if (window.__galerConfetti) window.__galerConfetti(100);
+    if (navigator.vibrate) navigator.vibrate([15, 40, 15]);
+  }, 700);
+})();
+
+/* ===== Auto night mode after 19:00 ===== */
+(function(){
+  function applyTheme(){
+    var hour = new Date().getHours();
+    var isNight = hour >= 19 || hour < 6;
+    document.body.classList.toggle('night-mode', isNight);
+    document.documentElement.classList.toggle('night-mode', isNight);
+  }
+  applyTheme();
+  // Re-check every 5 minutes for users who keep the page open
+  setInterval(applyTheme, 5 * 60 * 1000);
 })();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
