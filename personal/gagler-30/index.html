@@ -403,6 +403,26 @@ body::before{
 
 ::selection{ background: var(--coral); color:#fff; }
 a{ color: var(--coral-deep); }
+.weather-pill{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  background:linear-gradient(135deg,#fff 0%, #ffeed4 100%);
+  padding:10px 16px; border-radius:999px;
+  font-weight:700; font-size:14px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255,178,134,.55);
+  width:100%;
+}
+.map-wrap-detail{
+  border-radius:var(--radius-md);
+  overflow:hidden; box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255,178,134,.55);
+  background:#f5f5f5;
+  padding:0 !important;
+}
+.map-wrap-detail iframe{ display:block; width:100%; border:0; height:200px; }
+.btn--share{
+  background:linear-gradient(135deg,#34b7f1 0%, #25D366 100%); color:#fff;
+}
 </style>
 </head>
 <body>
@@ -474,7 +494,7 @@ a{ color: var(--coral-deep); }
       <div class="detail detail--wide" style="text-align:center; padding:12px;">
         <div id="weather-display" class="weather-pill">⏳ טוען תחזית...</div>
       </div>
-      <div class="detail detail--wide map-wrap">
+      <div class="detail detail--wide map-wrap-detail">
         <iframe src="https://maps.google.com/maps?q=%D7%97%D7%99%D7%99%D7%9D+%D7%95%D7%99%D7%98%D7%90%D7%9C+12+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91&output=embed&hl=he" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="חיים ויטאל 12, תל אביב"></iframe>
       </div>
       <div class="detail detail--wide" style="text-align:center; padding:14px;">
@@ -898,6 +918,42 @@ var PAYBOX_URL = "#";
       if (clicks >= 3){ clicks = 0; show(); }
     });
   }
+})();
+
+(function(){
+  var el = document.getElementById('weather-display');
+  if (!el) return;
+  var fallback = '☀️ ביוני בת״א בד״כ 24-28°, שמש מלאה';
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=32.0556&longitude=34.7706&daily=weather_code,temperature_2m_max,temperature_2m_min&start_date=2026-06-06&end_date=2026-06-06&timezone=Asia%2FJerusalem')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d && d.daily && d.daily.temperature_2m_max && d.daily.temperature_2m_max[0] != null) {
+        var tmax = Math.round(d.daily.temperature_2m_max[0]);
+        var tmin = Math.round(d.daily.temperature_2m_min[0]);
+        var code = d.daily.weather_code[0];
+        var emoji = code <= 1 ? '☀️' : code <= 3 ? '⛅' : code <= 48 ? '☁️' : '🌧️';
+        el.textContent = emoji + ' תחזית ל-06.06: ' + tmin + '°-' + tmax + '°';
+      } else {
+        el.textContent = fallback;
+      }
+    })
+    .catch(function(){ el.textContent = fallback; });
+})();
+
+(function(){
+  var btn = document.getElementById('wa-share-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    var url = window.location.origin + window.location.pathname;
+    if (!url.endsWith('/')) url += '/';
+    var msg = '🍹 מוזמנים לגגלר 30 — Tropical Rooftop Party 🌴\n06.06.26 · 16:30 · פלורנטין\n\n' + url;
+    var waUrl = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    window.open(waUrl, '_blank', 'noopener');
+    if (window.__galerMiniConfetti){
+      var rect = btn.getBoundingClientRect();
+      window.__galerMiniConfetti(rect.left + rect.width/2, rect.top + rect.height/2);
+    }
+  });
 })();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
