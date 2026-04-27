@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#ff6f47" />
+<title>גגלר 30 — Tropical Rooftop Party</title>
+<meta name="description" content="גגלר 30 — מסיבת גג טרופית בתל אביב. 06.06.26, 16:30. חיים ויטאל 12, פלורנטין." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="גגלר 30 — Tropical Rooftop Party" />
+<meta property="og:description" content="06.06.26 · 16:30 · חיים ויטאל 12, ת״א — לחגוג את גיל 30 על הגג." />
+<meta property="og:image" content="גגלר 30.jpg" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Pacifico&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --coral:        #ff6f47;
+  --coral-deep:   #e6492a;
+  --peach:        #ffb286;
+  --peach-light:  #ffd9b8;
+  --gold:         #ffce5c;
+  --sun:          #fff2b3;
+  --teal:         #2fa6a3;
+  --teal-deep:    #0e6e6c;
+  --sea:          #6fd6cf;
+  --dusk:         #6a3f6c;
+  --dusk-deep:    #3a1f3f;
+  --cream:        #fff6ec;
+  --ink:          #25151f;
+  --ink-soft:     #4b2f3a;
+  --leaf:         #1f7a4d;
+  --leaf-light:   #3aa872;
+
+  --glass:        rgba(255,255,255,0.55);
+  --glass-stroke: rgba(255,255,255,0.65);
+  --shadow-sm:    0 6px 18px rgba(58, 31, 63, .10);
+  --shadow-md:    0 14px 40px rgba(58, 31, 63, .18);
+  --shadow-lg:    0 30px 80px rgba(58, 31, 63, .25);
+
+  --radius-lg:    28px;
+  --radius-md:    20px;
+  --radius-sm:    14px;
+
+  --maxw:         640px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Heebo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(120% 60% at 50% 0%, #ffd6a8 0%, #ffb286 22%, #ff8a64 42%, #ff6f47 60%, #c8506b 80%, #5b2a59 100%);
+  min-height:100vh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body::before{
+  content:"";
+  position:fixed; inset:auto 0 0 0; height:55vh; pointer-events:none; z-index:-1;
+  background:
+    radial-gradient(80% 90% at 50% 100%, rgba(47,166,163,.55), rgba(47,166,163,0) 70%),
+    linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(111,214,207,.18) 60%, rgba(14,110,108,.30) 100%);
+}
+
+.page{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:18px 18px 96px;
+  position:relative;
+}
+
+.hero{
+  position:relative;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+  isolation:isolate;
+  background:
+    linear-gradient(180deg,#ffd1a0 0%, #ff8d63 35%, #e8506b 65%, #5b2a59 100%);
+  aspect-ratio: 2 / 3;
+  width: 78%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+.hero__img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center center;
+  display:block;
+  z-index:1;
+  margin:0 auto;
+}
+.hero::after{
+  content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:
+    radial-gradient(120% 80% at 50% 10%, rgba(255,255,255,.08) 0%, rgba(255,255,255,0) 35%),
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.18) 100%);
+}
+.hero__date{
+  position:absolute; left:50%; bottom:56px; transform:translateX(-50%);
+  z-index:3;
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  padding:12px 22px;
+  background:linear-gradient(180deg,#ffffff 0%, #fff2dd 100%);
+  border-radius:22px;
+  box-shadow:var(--shadow-md);
+  font-weight:900; letter-spacing:.5px; color:var(--coral-deep);
+  text-align:center;
+  line-height:1.25;
+}
+.hero__date .d{ font-size: clamp(20px, 6vw, 26px); font-weight:900; }
+.hero__date .t{ font-size: clamp(13px, 3.6vw, 16px); font-weight:700; opacity:.85; font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+.hero__date .p{ font-size: clamp(13px, 3.6vw, 16px); font-weight:700; color:var(--dusk); }
+
+.card{
+  margin-top:18px;
+  background:var(--glass);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border:1px solid var(--glass-stroke);
+  border-radius:var(--radius-lg);
+  padding:22px 20px;
+  box-shadow:var(--shadow-sm);
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
+}
+.card--solid{
+  background:linear-gradient(180deg,#ffffff 0%, #fff5e8 100%);
+}
+.card--tappable:active{
+  transform: scale(.992);
+}
+
+.title-block{ text-align:center; margin-top:22px;}
+.title-block .eyebrow{
+  display:inline-block;
+  font-family:"Caveat", cursive;
+  font-size: clamp(20px, 5.5vw, 28px);
+  color:#fff;
+  background:linear-gradient(135deg, var(--coral), var(--dusk));
+  padding:4px 14px;
+  border-radius:999px;
+  box-shadow:var(--shadow-sm);
+}
+
+.intro p{ font-size:17px; line-height:1.75; margin:0 0 12px; color:var(--ink-soft);}
+.intro p:last-child{ margin-bottom:0; }
+.intro .quote{
+  margin-top:14px;
+  padding:14px 16px;
+  background:linear-gradient(135deg, rgba(255,206,92,.25), rgba(255,111,71,.18));
+  border-right:4px solid var(--coral);
+  border-radius:var(--radius-sm);
+  font-weight:500;
+  color:var(--ink);
+}
+.kicker{ display:inline-block; font-family:"Caveat", cursive; font-size:22px; color:var(--coral-deep); }
+.kicker.big-date{
+  font-family:"Heebo", sans-serif;
+  font-weight:900;
+  font-size: clamp(22px, 6vw, 28px);
+  background: linear-gradient(135deg, var(--coral) 0%, var(--coral-deep) 50%, var(--dusk) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  padding: 2px 6px;
+  letter-spacing:.5px;
+  vertical-align: -2px;
+}
+
+.details{ display:grid; gap:12px; grid-template-columns: 1fr 1fr;}
+.detail{
+  position:relative;
+  border-radius:var(--radius-md);
+  padding:16px 14px 14px;
+  background:linear-gradient(160deg, #fff 0%, #fff4e3 100%);
+  border:1px solid rgba(255,178,134,.55);
+  box-shadow: var(--shadow-sm);
+  overflow:hidden;
+  transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease;
+}
+.detail:hover{ transform: translateY(-3px); box-shadow: var(--shadow-md);}
+.detail:active{ transform: translateY(-1px) scale(.99); }
+.detail::before{
+  content:""; position:absolute; inset:auto -30% -50% auto; width:120px; height:120px;
+  background: radial-gradient(circle, rgba(255,206,92,.35), rgba(255,206,92,0) 70%);
+  pointer-events:none;
+}
+.detail .ico{
+  width:38px; height:38px; border-radius:12px;
+  display:grid; place-items:center;
+  font-size:20px;
+  background:linear-gradient(135deg, var(--coral), var(--gold));
+  color:#fff;
+  box-shadow: 0 6px 14px rgba(255,111,71,.35);
+  margin-bottom:10px;
+}
+.detail .label{ font-size:12px; color:var(--ink-soft); opacity:.75; font-weight:500; letter-spacing:.3px; }
+.detail .value{ font-weight:800; font-size:16px; line-height:1.35; margin-top:2px; color:var(--ink); }
+.detail .value small{ display:block; font-weight:500; font-size:13px; opacity:.75; margin-top:2px; }
+.detail--wide{ grid-column:1 / -1; }
+.detail--compact{ padding: 14px 12px; }
+.detail--compact .value{ font-size:14px; }
+.detail--compact .value small{ font-size:12px; }
+
+.countdown{ display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin-top:14px;}
+.cd{
+  background:linear-gradient(180deg, var(--dusk) 0%, var(--coral-deep) 100%);
+  color:#fff; border-radius:var(--radius-sm); padding:10px 6px; text-align:center;
+  box-shadow: 0 8px 18px rgba(58,31,63,.25);
+  position:relative; overflow:hidden;
+}
+.cd .n{
+  font-size: clamp(20px, 6.5vw, 28px); font-weight:900; line-height:1;
+  font-variant-numeric: tabular-nums;
+  display:inline-block;
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.cd .n.tick{ animation: tickPop .6s cubic-bezier(.34,1.56,.64,1); }
+@keyframes tickPop{
+  0%   { transform: translateY(0) scale(1); }
+  35%  { transform: translateY(-6px) scale(1.18); }
+  100% { transform: translateY(0) scale(1); }
+}
+.cd .l{ font-size:11px; opacity:.85; margin-top:4px; letter-spacing:.4px; }
+.cd--done{ background: linear-gradient(180deg, var(--leaf), var(--teal)); }
+
+.h{
+  display:flex; align-items:center; gap:10px;
+  font-size: clamp(20px, 5.5vw, 24px);
+  font-weight:900; margin:0 0 10px;
+  color:var(--ink);
+}
+.h .pill{
+  display:inline-block; font-size:14px; font-family:"Caveat", cursive;
+  background:linear-gradient(135deg, var(--teal), var(--leaf));
+  color:#fff; padding:2px 10px; border-radius:999px;
+}
+
+.checks{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+.checks li{
+  display:flex; align-items:center; gap:12px;
+  background:#fff; border:1px solid rgba(255,178,134,.45);
+  border-radius:var(--radius-md); padding:12px 14px;
+  font-weight:500; color:var(--ink);
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease, background .25s ease;
+  cursor:pointer; user-select:none;
+  position:relative; overflow:hidden;
+}
+.checks li:hover{ transform: translateX(-3px); box-shadow: var(--shadow-md);}
+.checks li:active{ transform: scale(.985); }
+.checks li.done{ background: linear-gradient(135deg, #fff8ee 0%, #fff 100%);}
+.checks .box{
+  width:24px; height:24px; border-radius:8px;
+  border:2px solid var(--coral);
+  display:grid; place-items:center;
+  flex:0 0 auto;
+  background:#fff;
+  transition: background .25s ease, transform .35s cubic-bezier(.34,1.56,.64,1), border-color .25s ease;
+  position:relative;
+}
+.checks .box svg{
+  width:14px; height:14px;
+  stroke:#fff; stroke-width:3.5; fill:none;
+  stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray: 22;
+  stroke-dashoffset: 22;
+  transition: stroke-dashoffset .45s cubic-bezier(.34,1.56,.64,1);
+}
+.checks li.done .box{
+  background:linear-gradient(135deg, var(--coral), var(--gold));
+  border-color:transparent;
+  animation: boxPop .45s cubic-bezier(.34,1.56,.64,1);
+}
+.checks li.done .box svg{ stroke-dashoffset: 0; }
+@keyframes boxPop{
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.25) rotate(-6deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+.checks li.done .text{ text-decoration: line-through; opacity:.55; }
+.checks li:focus-visible{ outline: 2px solid var(--coral); outline-offset: 2px; }
+
+.cta{ display:grid; gap:10px; margin-top:14px;}
+.btn{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  padding:14px 16px; border-radius:999px; font-weight:800; font-size:16px;
+  text-decoration:none; border:none; cursor:pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform .15s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease, filter .2s ease;
+  position:relative; overflow:hidden;
+}
+.btn:hover{ transform: translateY(-2px); filter: brightness(1.04); }
+.btn:active{ transform: translateY(1px) scale(.98); }
+.btn--wa   { background:linear-gradient(135deg,#25D366 0%, #128C7E 100%); color:#fff; }
+.btn--cal  { background:linear-gradient(135deg,#ff6f47 0%, #c8506b 100%); color:#fff; }
+.btn--waze { background:linear-gradient(135deg,#33ccff 0%, #2fa6a3 100%); color:#fff; }
+.btn--pay  { background:linear-gradient(135deg,#ffce5c 0%, #ff6f47 60%, #c8506b 100%); color:#fff; position:relative; }
+.btn--pay::after{
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  box-shadow: 0 0 0 0 rgba(255,206,92,.55); animation: payPulse 2.4s ease-in-out infinite;
+}
+.btn--ghost{ background:#fff; color:var(--ink); border:1.5px solid rgba(58,31,63,.12); }
+.btn--inline{
+  display:inline-flex; padding:9px 14px; border-radius:999px;
+  font-size:13px; font-weight:800; gap:6px; margin-top:10px;
+  text-decoration:none; box-shadow: 0 6px 14px rgba(255,111,71,.30);
+}
+@keyframes payPulse{
+  0%,100%{ box-shadow: 0 0 0 0 rgba(255,206,92,.55); }
+  50%    { box-shadow: 0 0 0 12px rgba(255,206,92,0); }
+}
+.btn .em{ font-size:18px; }
+.cta-row{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+@media (max-width:380px){ .cta-row{ grid-template-columns:1fr; } }
+
+.note{
+  text-align:center; color:#fff; opacity:.92;
+  margin-top:20px; padding:0 6px;
+  font-size:14px; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(58,31,63,.45);
+}
+.signoff{
+  text-align:center; color:#fff;
+  margin-top:18px;
+  font-family:"Pacifico", cursive;
+  font-size: clamp(20px, 5.5vw, 26px);
+  text-shadow: 0 2px 8px rgba(58,31,63,.45);
+}
+
+.deco{
+  position:fixed; pointer-events:none; z-index:-1;
+  font-size:22px; opacity:.55;
+  animation: floatY 8s ease-in-out infinite alternate;
+}
+.deco--1{ top:18%; left:6%; animation-duration:7s; }
+.deco--2{ top:42%; right:7%; animation-duration:9s; }
+.deco--3{ top:65%; left:8%; animation-duration:10s; }
+.deco--4{ top:80%; right:10%; animation-duration:8s; }
+
+#confetti-canvas{
+  position:fixed; inset:0;
+  width:100vw; height:100vh;
+  pointer-events:none; z-index:9999;
+}
+
+.easter{
+  position:fixed; inset:0; z-index:9998;
+  display:none;
+  align-items:center; justify-content:center;
+  background: radial-gradient(circle at 50% 50%, rgba(91,42,89,.85), rgba(20,8,28,.95));
+  backdrop-filter: blur(8px);
+  animation: easterFade .4s ease;
+}
+.easter.show{ display:flex; }
+.easter__inner{
+  text-align:center; color:#fff; padding:32px;
+  animation: easterPop .7s cubic-bezier(.34,1.56,.64,1);
+}
+.easter__big{
+  font-family:"Pacifico", cursive;
+  font-size: clamp(40px, 12vw, 72px);
+  background: linear-gradient(135deg, #ffce5c 0%, #ff6f47 50%, #6fd6cf 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow: 0 4px 24px rgba(255,206,92,.4);
+}
+.easter__sub{
+  font-size: 18px; font-weight:700; margin-top: 12px;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+.easter__close{
+  margin-top:20px; padding: 10px 22px; border-radius:999px; border:none;
+  background: linear-gradient(135deg,#ff6f47, #ffce5c); color:#fff;
+  font-weight:800; font-size:14px; cursor:pointer;
+  box-shadow: var(--shadow-md);
+}
+@keyframes easterFade { from{opacity:0} to{opacity:1} }
+@keyframes easterPop {
+  0%   { transform: scale(.4) rotate(-8deg); opacity:0; }
+  60%  { transform: scale(1.08) rotate(2deg); opacity:1; }
+  100% { transform: scale(1) rotate(0); opacity:1; }
+}
+
+@keyframes floatY{
+  0%   { transform: translateY(0) rotate(-4deg); }
+  100% { transform: translateY(-14px) rotate(4deg); }
+}
+@media (prefers-reduced-motion: reduce){
+  .deco { animation: none !important; }
+}
+.no-anim .deco,
+.no-anim .btn--pay::after,
+.no-anim *{
+  animation: none !important;
+  transition-duration: .01ms !important;
+}
+
+::selection{ background: var(--coral); color:#fff; }
+a{ color: var(--coral-deep); }
+</style>
+</head>
+<body>
+
+<div class="deco deco--1" aria-hidden="true">🌴</div>
+<div class="deco deco--2" aria-hidden="true">🍹</div>
+<div class="deco deco--3" aria-hidden="true">🌅</div>
+<div class="deco deco--4" aria-hidden="true">🍍</div>
+
+<canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+<div class="easter" id="easter" role="dialog" aria-modal="true" aria-label="המסיבה התחילה">
+  <div class="easter__inner">
+    <div style="font-size:64px; line-height:1">🎉🌴🍹</div>
+    <div class="easter__big">המסיבה התחילה!</div>
+    <div class="easter__sub">נתראה על הגג ✨</div>
+    <button class="easter__close" id="easter-close" type="button">סגור</button>
+  </div>
+</div>
+
+<main class="page">
+
+  <section class="hero" aria-label="הזמנה">
+    <img class="hero__img" src="גגלר 30.jpg" alt="גגלר 30 — Tropical Rooftop Party"
+         onerror="this.style.display='none'" />
+  </section>
+
+  <header class="title-block">
+    <span class="eyebrow">You're invited 🍹</span>
+  </header>
+
+  <section class="card intro card--tappable" aria-label="פתיח">
+    <p>
+      כמיטב המסורת — שקיעה על הגג, מוזיקה טובה עם <strong>DJ Edry</strong>, דרינקים, פיצות,
+      אנשים יפים ואווירה של קיץ בתל אביב.
+    </p>
+    <p>
+      מסיבה טרופית קלילה, שמחה ומיוחדת — לחגוג כמו שצריך את גיל <strong>30</strong>.
+    </p>
+    <div class="quote">
+      רוב הדברים שהשגתי הגיעו בעמל רב, אבל יש משהו אחד שקיבלתי בלי להתאמץ — <strong>תאריך לידה יפה</strong>. ופעם בעשור הוא עוד יותר מגניב… <span class="kicker big-date">06.06.26</span>
+    </div>
+  </section>
+
+  <section class="card card--solid" aria-label="פרטים">
+    <h2 class="h">📍 הפרטים החשובים <span class="pill">save the date</span></h2>
+
+    <div class="details">
+      <div class="detail">
+        <div class="ico" aria-hidden="true">📅</div>
+        <div class="label">תאריך ושעה</div>
+        <div class="value">שבת · 06.06.26 <small>16:30 – 23:00</small></div>
+      </div>
+      <div class="detail">
+        <div class="ico" aria-hidden="true">👕</div>
+        <div class="label">קוד לבוש</div>
+        <div class="value">טרופי / חוף <small>וייב של חופש וכיף</small></div>
+      </div>
+      <div class="detail detail--compact">
+        <div class="ico" aria-hidden="true">📍</div>
+        <div class="label">איפה זה קורה</div>
+        <div class="value">חיים ויטאל 12 <small>קומה 4, פלורנטין, תל אביב</small></div>
+      </div>
+      <div class="detail detail--compact">
+        <div class="ico" aria-hidden="true">💸</div>
+        <div class="label">השתתפות</div>
+        <div class="value">100 ₪ <small>פייבוקס · 054-7523288</small></div>
+      </div>
+      <div class="detail detail--wide" style="text-align:center; padding:14px;">
+        <a class="btn btn--pay btn--inline paybox-link" href="#" target="_blank" rel="noopener" style="margin:0;">
+          <span class="em">💳</span> תשלום בקבוצת פייבוקס
+        </a>
+      </div>
+    </div>
+
+    <h3 class="h" style="margin-top:18px">⏳ עוד קצת והאי שלנו</h3>
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="cd"><div class="n" id="cd-d">--</div><div class="l">ימים</div></div>
+      <div class="cd"><div class="n" id="cd-h">--</div><div class="l">שעות</div></div>
+      <div class="cd"><div class="n" id="cd-m">--</div><div class="l">דקות</div></div>
+      <div class="cd"><div class="n" id="cd-s">--</div><div class="l">שניות</div></div>
+    </div>
+  </section>
+
+  <section class="card" aria-label="צ'קליסט">
+    <h2 class="h">✅ מה אני צריך מכם עכשיו?</h2>
+    <ul class="checks" id="checklist">
+      <li><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">לשריין את התאריך ביומן</span></li>
+      <li><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">להתחיל להתרגש</span></li>
+      <li><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">לדאוג לביגוד מתאים</span></li>
+      <li><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">ולהמתין בסבלנות 😏</span></li>
+    </ul>
+  </section>
+
+  <section class="card card--solid" aria-label="פעולות">
+    <h2 class="h">🎟️ תאשרו הגעה</h2>
+
+    <div class="cta">
+      <a class="btn btn--pay paybox-link" href="#" target="_blank" rel="noopener" data-confetti="1">
+        <span class="em">💳</span> תשלום בקבוצת פייבוקס · 100 ₪
+      </a>
+
+      <a class="btn btn--wa" id="wa-btn" data-confetti="1"
+         href="#"
+         target="_blank" rel="noopener">
+        <span class="em">💬</span> אשרו הגעה בוואטסאפ
+      </a>
+
+      <div class="cta-row">
+        <a class="btn btn--cal" id="ics-btn" href="#" download="galer-30.ics">
+          <span class="em">📅</span> הוסף ליומן
+        </a>
+        <a class="btn btn--cal" id="gcal-btn"
+           href="#"
+           target="_blank" rel="noopener">
+          <span class="em">🗓️</span> Google Calendar
+        </a>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn--waze"
+           href="https://waze.com/ul?q=%D7%97%D7%99%D7%99%D7%9D%20%D7%95%D7%99%D7%98%D7%90%D7%9C%2012%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&navigate=yes"
+           target="_blank" rel="noopener">
+          <span class="em">🚗</span> ניווט ב-Waze
+        </a>
+        <button class="btn btn--ghost" id="copy-addr" type="button">
+          <span class="em">📋</span> <span id="copy-addr-text" style="font-family: Heebo">העתק כתובת</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <p class="note">
+    מוזמנים להזמין חברים — רק בתיאום מולי 🙏<br>
+    מי שלא יכול או לא מתכנן להגיע — מוזמן לצאת מהקבוצה. <em>No hard feelings</em> ❤️
+  </p>
+
+  <p class="signoff" style="font-family: Heebo">נתראה על הגג 🍹🌅🎶</p>
+</main>
+
+<script>
+var PAYBOX_URL = "#";
+
+(function(){
+  if (!PAYBOX_URL || PAYBOX_URL === "#") return;
+  document.querySelectorAll('.paybox-link').forEach(function(a){
+    a.setAttribute('href', PAYBOX_URL);
+  });
+})();
+
+(function(){
+  var TARGET_UTC = Date.UTC(2026, 5, 6, 13, 30, 0);
+  var attempts = 0, MAX = 50;
+  var timerId = null;
+  var fired = false;
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+
+  function setVal(el, val){
+    if (el.textContent !== String(val)){
+      el.textContent = val;
+      el.classList.remove('tick');
+      void el.offsetWidth;
+      el.classList.add('tick');
+    }
+  }
+
+  function render($d, $h, $m, $s, $cd){
+    var diff = TARGET_UTC - Date.now();
+    if (diff <= 0){
+      $cd.innerHTML = '<div class="cd cd--done" style="grid-column:1/-1">' +
+                        '<div class="n">🎉 עכשיו! 🎉</div>' +
+                        '<div class="l">המסיבה כאן</div>' +
+                      '</div>';
+      if (timerId){ clearInterval(timerId); timerId = null; }
+      if (!fired){
+        fired = true;
+        if (window.__galerEasterEgg) window.__galerEasterEgg();
+      }
+      return;
+    }
+    var sec = Math.floor(diff / 1000);
+    var d   = Math.floor(sec / 86400); sec -= d * 86400;
+    var h   = Math.floor(sec / 3600);  sec -= h * 3600;
+    var m   = Math.floor(sec / 60);    sec -= m * 60;
+    setVal($d, d);
+    setVal($h, pad(h));
+    setVal($m, pad(m));
+    setVal($s, pad(sec));
+  }
+
+  function init(){
+    var $d  = document.getElementById('cd-d');
+    var $h  = document.getElementById('cd-h');
+    var $m  = document.getElementById('cd-m');
+    var $s  = document.getElementById('cd-s');
+    var $cd = document.getElementById('countdown');
+
+    if (!$d || !$h || !$m || !$s || !$cd){
+      attempts++;
+      if (attempts <= MAX) return setTimeout(init, 100);
+      return;
+    }
+    render($d, $h, $m, $s, $cd);
+    if (timerId) clearInterval(timerId);
+    timerId = setInterval(function(){ render($d, $h, $m, $s, $cd); }, 1000);
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+
+(function(){
+  function init(){
+    var list = document.getElementById('checklist');
+    if (!list) return;
+    var items = list.querySelectorAll('li');
+    items.forEach(function(li){
+      li.setAttribute('role', 'checkbox');
+      li.setAttribute('tabindex', '0');
+      li.setAttribute('aria-checked', 'false');
+      function toggle(e){
+        var on = li.classList.toggle('done');
+        li.setAttribute('aria-checked', on ? 'true' : 'false');
+        if (on && window.__galerMiniConfetti){
+          var rect = li.getBoundingClientRect();
+          window.__galerMiniConfetti(rect.right - 18, rect.top + rect.height/2);
+        }
+        if (on){
+          var allDone = list.querySelectorAll('li.done').length === items.length;
+          if (allDone && window.__galerConfetti){
+            setTimeout(function(){ window.__galerConfetti(60); }, 200);
+          }
+        }
+      }
+      li.addEventListener('click', toggle);
+      li.addEventListener('keydown', function(e){
+        if (e.key === ' ' || e.key === 'Enter'){
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+  }
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+
+(function(){
+  function pad(n){ return n<10 ? '0'+n : ''+n; }
+  function fmt(date){
+    return date.getUTCFullYear()
+      + pad(date.getUTCMonth()+1)
+      + pad(date.getUTCDate()) + 'T'
+      + pad(date.getUTCHours())
+      + pad(date.getUTCMinutes())
+      + pad(date.getUTCSeconds()) + 'Z';
+  }
+  var start = new Date(Date.UTC(2026, 5, 6, 13, 30, 0));
+  var end   = new Date(Date.UTC(2026, 5, 6, 20,  0, 0));
+  var now   = new Date();
+
+  var ics = [
+    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Galer 30//Tropical Rooftop//HE',
+    'CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT',
+    'UID:galer-30-' + Date.now() + '@rooftop',
+    'DTSTAMP:' + fmt(now),'DTSTART:' + fmt(start),'DTEND:'   + fmt(end),
+    'SUMMARY:גגלר 30 — Tropical Rooftop Party 🌴🌇',
+    'DESCRIPTION:מסיבת גג טרופית לחגוג 30. שקיעה\\, מוזיקה עם DJ Edry\\, דרינקים\\, פיצות. קוד לבוש: טרופי/חוף. השתתפות: 100₪ בביט/פייבוקס 054-7523288.',
+    'LOCATION:חיים ויטאל 12\\, קומה 4\\, תל אביב (פלורנטין)',
+    'GEO:32.0556;34.7706',
+    'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY',
+    'DESCRIPTION:גגלר 30 — מחר על הגג!','END:VALARM',
+    'END:VEVENT','END:VCALENDAR'
+  ].join('\r\n');
+
+  var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+  var url  = URL.createObjectURL(blob);
+  var btn  = document.getElementById('ics-btn');
+  if (btn) btn.setAttribute('href', url);
+})();
+
+(function(){
+  var a = document.getElementById('wa-btn');
+  if (!a) return;
+  var msg = 'מאשר/ת הגעה ל-גגלר 30! 🌴🍹';
+  a.href = 'https://wa.me/972547523288?text=' + encodeURIComponent(msg);
+})();
+
+(function(){
+  var a = document.getElementById('gcal-btn');
+  if (!a) return;
+  var params = {
+    action: 'TEMPLATE',
+    text: 'גגלר 30 — Tropical Rooftop Party',
+    dates: '20260606T133000Z/20260606T200000Z',
+    details: 'מסיבת גג טרופית לחגוג 30 — דרינקים, פיצות, DJ Edry, שקיעה על הגג. קוד לבוש: טרופי/חוף. השתתפות: 100₪ (ביט/פייבוקס 054-7523288).',
+    location: 'חיים ויטאל 12, קומה 4, תל אביב',
+    ctz: 'Asia/Jerusalem'
+  };
+  var qs = Object.keys(params).map(function(k){
+    return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+  }).join('&');
+  a.href = 'https://calendar.google.com/calendar/render?' + qs;
+})();
+
+(function(){
+  var btn = document.getElementById('copy-addr');
+  var lbl = document.getElementById('copy-addr-text');
+  if (!btn || !lbl) return;
+  var addr = 'חיים ויטאל 12, קומה 4, תל אביב (פלורנטין)';
+  btn.addEventListener('click', async function(){
+    try {
+      await navigator.clipboard.writeText(addr);
+      lbl.textContent = 'הועתק! ✅';
+      if (window.__galerMiniConfetti){
+        var rect = btn.getBoundingClientRect();
+        window.__galerMiniConfetti(rect.left + rect.width/2, rect.top + rect.height/2);
+      }
+      setTimeout(function(){ lbl.textContent = 'העתק כתובת'; }, 1800);
+    } catch(e){
+      window.prompt('העתיקו את הכתובת:', addr);
+    }
+  });
+})();
+
+(function(){
+  var canvas = document.getElementById('confetti-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var particles = [];
+  var rafId = null;
+  var animationsOn = true;
+
+  function resize(){
+    canvas.width  = window.innerWidth  * DPR;
+    canvas.height = window.innerHeight * DPR;
+    canvas.style.width  = window.innerWidth  + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var COLORS = ['#ff6f47','#ffce5c','#2fa6a3','#6fd6cf','#fff2b3','#e6492a','#6a3f6c','#ffb286'];
+  var SHAPES = ['square','circle','strip'];
+
+  function spawn(x, y, count, opts){
+    opts = opts || {};
+    var spread = opts.spread || Math.PI * 2;
+    var angleBase = opts.angle != null ? opts.angle : -Math.PI/2;
+    var velMin = opts.velMin || 4;
+    var velMax = opts.velMax || 12;
+    for (var i=0;i<count;i++){
+      var ang = angleBase + (Math.random()-0.5) * spread;
+      var v = velMin + Math.random() * (velMax - velMin);
+      particles.push({
+        x: x, y: y,
+        vx: Math.cos(ang) * v,
+        vy: Math.sin(ang) * v,
+        gravity: 0.22 + Math.random()*0.12,
+        drag: 0.985,
+        rot: Math.random() * Math.PI * 2,
+        vrot: (Math.random() - 0.5) * 0.3,
+        size: 6 + Math.random()*8,
+        color: COLORS[(Math.random()*COLORS.length)|0],
+        shape: SHAPES[(Math.random()*SHAPES.length)|0],
+        life: 0,
+        maxLife: 90 + Math.random() * 60,
+        opacity: 1
+      });
+    }
+    if (!rafId) tick();
+  }
+
+  function tick(){
+    rafId = null;
+    if (!animationsOn){ ctx.clearRect(0,0,canvas.width,canvas.height); particles.length=0; return; }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = particles.length - 1; i >= 0; i--){
+      var p = particles[i];
+      p.vx *= p.drag;
+      p.vy = p.vy * p.drag + p.gravity;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rot += p.vrot;
+      p.life++;
+      if (p.life > p.maxLife - 30){
+        p.opacity = Math.max(0, 1 - (p.life - (p.maxLife-30))/30);
+      }
+      if (p.life >= p.maxLife || p.y > window.innerHeight + 40){
+        particles.splice(i,1);
+        continue;
+      }
+      ctx.save();
+      ctx.globalAlpha = p.opacity;
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.fillStyle = p.color;
+      if (p.shape === 'circle'){
+        ctx.beginPath(); ctx.arc(0,0, p.size*0.5, 0, Math.PI*2); ctx.fill();
+      } else if (p.shape === 'strip'){
+        ctx.fillRect(-p.size*0.6, -p.size*0.18, p.size*1.2, p.size*0.36);
+      } else {
+        ctx.fillRect(-p.size*0.5, -p.size*0.5, p.size, p.size);
+      }
+      ctx.restore();
+    }
+    if (particles.length > 0){
+      rafId = requestAnimationFrame(tick);
+    }
+  }
+
+  window.__galerConfetti = function(count){
+    if (!animationsOn) return;
+    count = count || 80;
+    var w = window.innerWidth, h = window.innerHeight;
+    spawn(w*0.15, h*0.95, Math.floor(count/2), { angle: -Math.PI/2 - Math.PI/8, spread: Math.PI/3, velMin: 12, velMax: 22 });
+    spawn(w*0.85, h*0.95, Math.floor(count/2), { angle: -Math.PI/2 + Math.PI/8, spread: Math.PI/3, velMin: 12, velMax: 22 });
+    spawn(w*0.5, -10, Math.floor(count/3), { angle: Math.PI/2, spread: Math.PI, velMin: 2, velMax: 6 });
+  };
+
+  window.__galerMiniConfetti = function(x, y){
+    if (!animationsOn) return;
+    spawn(x, y, 14, { angle: -Math.PI/2, spread: Math.PI*1.4, velMin: 3, velMax: 8 });
+  };
+
+  window.__galerSetAnimations = function(on){
+    animationsOn = !!on;
+    if (!on){
+      particles.length = 0;
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      document.body.classList.add('no-anim');
+    } else {
+      document.body.classList.remove('no-anim');
+    }
+  };
+
+  function init(){
+    document.querySelectorAll('[data-confetti]').forEach(function(el){
+      el.addEventListener('click', function(){
+        window.__galerConfetti(70);
+      });
+    });
+  }
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+
+(function(){
+  var overlay = document.getElementById('easter');
+  var closeBtn = document.getElementById('easter-close');
+  if (!overlay || !closeBtn) return;
+
+  function show(){
+    overlay.classList.add('show');
+    if (window.__galerConfetti){
+      window.__galerConfetti(120);
+      setTimeout(function(){ window.__galerConfetti(80); }, 600);
+      setTimeout(function(){ window.__galerConfetti(80); }, 1200);
+    }
+  }
+  function hide(){ overlay.classList.remove('show'); }
+
+  closeBtn.addEventListener('click', hide);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) hide(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay.classList.contains('show')) hide();
+  });
+
+  window.__galerEasterEgg = show;
+
+  var datePill = document.querySelector('.hero__date');
+  if (datePill){
+    var clicks = 0, t;
+    datePill.addEventListener('click', function(){
+      clicks++; clearTimeout(t);
+      t = setTimeout(function(){ clicks = 0; }, 700);
+      if (clicks >= 3){ clicks = 0; show(); }
+    });
+  }
+})();
+</script>
+</body>
+</html>
