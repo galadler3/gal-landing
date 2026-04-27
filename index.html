@@ -3,119 +3,1488 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#ff6f47" />
-<title>Gal · Landing Pages</title>
+<meta name="theme-color" content="#ffd6a8" />
+<title>גגלר 30 — Tropical Rooftop Party</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌴%3C/text%3E%3C/svg%3E" />
-<meta name="robots" content="noindex" />
+<meta name="description" content="גגלר 30 — מסיבת גג טרופית בתל אביב. 06.06.26, 16:30. חיים ויטאל 12, פלורנטין." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="גגלר 30 — Tropical Rooftop Party" />
+<meta property="og:description" content="06.06.26 · 16:30 · חיים ויטאל 12, ת״א — לחגוג את גיל 30 על הגג." />
+<meta property="og:image" content="גגלר 30.jpg" />
+<meta property="og:type" content="website" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Pacifico&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --coral:#ff6f47; --coral-deep:#e6492a; --gold:#ffce5c;
-    --teal:#2fa6a3; --leaf:#1f7a4d;
-    --dusk:#6a3f6c; --ink:#25151f; --cream:#fff6ec;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;min-height:100%}
-  body{
-    font-family:"Heebo",system-ui,-apple-system,"Segoe UI",sans-serif;
-    color:var(--ink);
-    background:radial-gradient(120% 60% at 50% 0%,#ffd6a8 0%,#ffb286 22%,#ff8a64 42%,#ff6f47 60%,#c8506b 80%,#5b2a59 100%);
-    min-height:100vh;
-    display:flex; align-items:center; justify-content:center;
-    padding:24px;
-  }
-  .wrap{
-    max-width:560px; width:100%;
-    background:rgba(255,255,255,.65);
-    backdrop-filter:blur(14px) saturate(140%);
-    -webkit-backdrop-filter:blur(14px) saturate(140%);
-    border:1px solid rgba(255,255,255,.7);
-    border-radius:28px;
-    padding:32px 26px;
-    box-shadow:0 30px 80px rgba(58,31,63,.25);
-    text-align:center;
-  }
-  h1{
-    font-family:"Pacifico",cursive;
-    font-size:clamp(32px,8vw,44px);
-    margin:0 0 6px;
-    background:linear-gradient(135deg,var(--coral),var(--dusk));
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  .sub{ color:#4b2f3a; opacity:.8; margin-bottom:24px; font-size:15px;}
-  .section{ margin-top:22px; text-align:right;}
-  .section:first-of-type{ margin-top:0;}
-  .section-h{
-    display:flex; align-items:center; gap:10px;
-    font-size:14px; font-weight:900; letter-spacing:.5px;
-    text-transform:uppercase; color:var(--ink); opacity:.8;
-    margin:0 4px 10px;
-  }
-  .section-h .dot{
-    width:10px; height:10px; border-radius:50%;
-    background:linear-gradient(135deg,var(--coral),var(--gold));
-  }
-  .section--biz .section-h .dot{
-    background:linear-gradient(135deg,var(--teal),var(--leaf));
-  }
-  ul{list-style:none; padding:0; margin:0; display:grid; gap:10px;}
-  a.card{
-    display:flex; align-items:center; justify-content:space-between;
-    text-decoration:none;
-    background:linear-gradient(160deg,#fff 0%,#fff4e3 100%);
-    border:1px solid rgba(255,178,134,.55);
-    border-radius:20px; padding:14px 16px; color:var(--ink);
-    box-shadow:0 6px 18px rgba(58,31,63,.10);
-    transition:transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease;
-  }
-  a.card:hover{ transform:translateY(-3px); box-shadow:0 14px 40px rgba(58,31,63,.18);}
-  .section--biz a.card{
-    background:linear-gradient(160deg,#fff 0%,#e8faf7 100%);
-    border-color:rgba(111,214,207,.55);
-  }
-  .card .t{ font-weight:900; font-size:16px; line-height:1.3; flex:1 1 auto; min-width:0;}
-  .card .t small{ display:block; font-weight:500; font-size:12px; opacity:.7; margin-top:2px;}
-  .card .arrow{
-    width:32px; height:32px; border-radius:10px;
-    background:linear-gradient(135deg,var(--coral),var(--gold));
-    color:#fff; display:grid; place-items:center; font-weight:900;
-    flex:0 0 auto; transform:scaleX(-1);
-  }
-  .section--biz .card .arrow{ background:linear-gradient(135deg,var(--teal),var(--leaf)); }
-  .empty{
-    background:rgba(255,255,255,.45);
-    border:1px dashed rgba(58,31,63,.25);
-    border-radius:20px; padding:14px 16px;
-    color:#4b2f3a; opacity:.65; font-size:14px; font-weight:500;
-  }
-  .footer{ margin-top:24px; font-size:12px; color:#4b2f3a; opacity:.6;}
+:root{
+  --coral:        #ff6f47;
+  --coral-deep:   #e6492a;
+  --peach:        #ffb286;
+  --peach-light:  #ffd9b8;
+  --gold:         #ffce5c;
+  --sun:          #fff2b3;
+  --teal:         #2fa6a3;
+  --teal-deep:    #0e6e6c;
+  --sea:          #6fd6cf;
+  --dusk:         #6a3f6c;
+  --dusk-deep:    #3a1f3f;
+  --cream:        #fff6ec;
+  --ink:          #25151f;
+  --ink-soft:     #4b2f3a;
+  --leaf:         #1f7a4d;
+  --leaf-light:   #3aa872;
+
+  --glass:        rgba(255,255,255,0.55);
+  --glass-stroke: rgba(255,255,255,0.65);
+  --shadow-sm:    0 6px 18px rgba(58, 31, 63, .10);
+  --shadow-md:    0 14px 40px rgba(58, 31, 63, .18);
+  --shadow-lg:    0 30px 80px rgba(58, 31, 63, .25);
+
+  --radius-lg:    28px;
+  --radius-md:    20px;
+  --radius-sm:    14px;
+
+  --maxw:         640px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth; background:#5b2a59;}
+body{
+  font-family:"Heebo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color:var(--ink);
+  background:
+    linear-gradient(180deg, #5b2a59 0%, #5b2a59 100%),
+    radial-gradient(120% 60% at 50% 0%, #ffd6a8 0%, #ffb286 22%, #ff8a64 42%, #ff6f47 60%, #c8506b 80%, #5b2a59 100%);
+  background:
+    radial-gradient(120% 60% at 50% 0%, #ffd6a8 0%, #ffb286 22%, #ff8a64 42%, #ff6f47 60%, #c8506b 80%, #5b2a59 100%) no-repeat,
+    #5b2a59;
+  background-attachment: fixed, fixed;
+  min-height:100vh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body::before{
+  content:"";
+  position:fixed; inset:auto 0 0 0; height:55vh; pointer-events:none; z-index:-1;
+  background:
+    radial-gradient(80% 90% at 50% 100%, rgba(47,166,163,.55), rgba(47,166,163,0) 70%),
+    linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(111,214,207,.18) 60%, rgba(14,110,108,.30) 100%);
+}
+
+.page{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:18px 18px 200px;
+  position:relative;
+}
+
+.hero{
+  position:relative;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+  isolation:isolate;
+  background:
+    linear-gradient(180deg,#ffd1a0 0%, #ff8d63 35%, #e8506b 65%, #5b2a59 100%);
+  aspect-ratio: 2 / 3;
+  width: 78%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+.hero__img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center center;
+  display:block;
+  z-index:1;
+  margin:0 auto;
+}
+.hero::after{
+  content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:
+    radial-gradient(120% 80% at 50% 10%, rgba(255,255,255,.08) 0%, rgba(255,255,255,0) 35%),
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.18) 100%);
+}
+.hero__date{
+  position:absolute; left:50%; bottom:56px; transform:translateX(-50%);
+  z-index:3;
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  padding:12px 22px;
+  background:linear-gradient(180deg,#ffffff 0%, #fff2dd 100%);
+  border-radius:22px;
+  box-shadow:var(--shadow-md);
+  font-weight:900; letter-spacing:.5px; color:var(--coral-deep);
+  text-align:center;
+  line-height:1.25;
+}
+.hero__date .d{ font-size: clamp(20px, 6vw, 26px); font-weight:900; }
+.hero__date .t{ font-size: clamp(13px, 3.6vw, 16px); font-weight:700; opacity:.85; font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+.hero__date .p{ font-size: clamp(13px, 3.6vw, 16px); font-weight:700; color:var(--dusk); }
+
+.card{
+  margin-top:18px;
+  background:var(--glass);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border:1px solid var(--glass-stroke);
+  border-radius:var(--radius-lg);
+  padding:22px 20px;
+  box-shadow:var(--shadow-sm);
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
+}
+.card--solid{
+  background:linear-gradient(180deg,#ffffff 0%, #fff5e8 100%);
+}
+.card--tappable:active{
+  transform: scale(.992);
+}
+
+.title-block{ text-align:center; margin-top:22px;}
+.title-block .eyebrow{
+  display:inline-block;
+  font-family:"Caveat", cursive;
+  font-size: clamp(20px, 5.5vw, 28px);
+  color:#fff;
+  background:linear-gradient(135deg, var(--coral), var(--dusk));
+  padding:4px 14px;
+  border-radius:999px;
+  box-shadow:var(--shadow-sm);
+}
+
+.intro p{ font-size:17px; line-height:1.75; margin:0 0 12px; color:var(--ink-soft);}
+.intro p:last-child{ margin-bottom:0; }
+.intro .quote{
+  margin-top:14px;
+  padding:14px 16px;
+  background:linear-gradient(135deg, rgba(255,206,92,.25), rgba(255,111,71,.18));
+  border-right:4px solid var(--coral);
+  border-radius:var(--radius-sm);
+  font-weight:500;
+  color:var(--ink);
+}
+.kicker{ display:inline-block; font-family:"Caveat", cursive; font-size:22px; color:var(--coral-deep); }
+.kicker.big-date{
+  font-family:"Heebo", sans-serif;
+  font-weight:900;
+  font-size: clamp(18px, 4.8vw, 24px);
+  background: linear-gradient(135deg, var(--coral) 0%, var(--coral-deep) 50%, var(--dusk) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  padding: 2px 4px;
+  letter-spacing:.3px;
+  vertical-align: -1px;
+  white-space: nowrap;
+}
+
+.details{ display:grid; gap:12px; grid-template-columns: repeat(10, 1fr);}
+.details > .detail:not([style*="grid-column"]):not(.detail--wide){ grid-column: span 5; }
+.detail{
+  position:relative;
+  text-align:center;
+  border-radius:var(--radius-md);
+  padding:16px 14px 14px;
+  background:linear-gradient(160deg, #fff 0%, #fff4e3 100%);
+  border:1px solid rgba(255,178,134,.55);
+  box-shadow: var(--shadow-sm);
+  overflow:hidden;
+  transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease;
+}
+.detail:hover{ transform: translateY(-3px); box-shadow: var(--shadow-md);}
+.detail:active{ transform: translateY(-1px) scale(.99); }
+.detail::before{
+  content:""; position:absolute; inset:auto -30% -50% auto; width:120px; height:120px;
+  background: radial-gradient(circle, rgba(255,206,92,.35), rgba(255,206,92,0) 70%);
+  pointer-events:none;
+}
+.detail .ico{
+  width:38px; height:38px; border-radius:12px;
+  margin-left:auto; margin-right:auto;
+  display:grid; place-items:center;
+  font-size:20px;
+  background:linear-gradient(135deg, var(--coral), var(--gold));
+  color:#fff;
+  box-shadow: 0 6px 14px rgba(255,111,71,.35);
+  margin-bottom:10px;
+}
+.detail .label{ font-size:12px; color:var(--ink-soft); opacity:.75; font-weight:500; letter-spacing:.3px; }
+.detail .value{ font-weight:800; font-size:16px; line-height:1.35; margin-top:2px; color:var(--ink); }
+.detail .value small{ display:block; font-weight:500; font-size:13px; opacity:.75; margin-top:2px; }
+.detail--wide{ grid-column:1 / -1; }
+.detail--compact{ padding: 14px 12px; }
+.detail--compact .value{ font-size:14px; }
+.detail--compact .value small{ font-size:12px; }
+
+.countdown{ display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin-top:14px;}
+.cd{
+  background:linear-gradient(180deg, var(--dusk) 0%, var(--coral-deep) 100%);
+  color:#fff; border-radius:var(--radius-sm); padding:10px 6px; text-align:center;
+  box-shadow: 0 8px 18px rgba(58,31,63,.25);
+  position:relative; overflow:hidden;
+}
+.cd .n{
+  font-size: clamp(20px, 6.5vw, 28px); font-weight:900; line-height:1;
+  font-variant-numeric: tabular-nums;
+  display:inline-block;
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.cd .n.tick{ animation: tickPop .6s cubic-bezier(.34,1.56,.64,1); }
+@keyframes tickPop{
+  0%   { transform: translateY(0) scale(1); }
+  35%  { transform: translateY(-6px) scale(1.18); }
+  100% { transform: translateY(0) scale(1); }
+}
+.cd .l{ font-size:11px; opacity:.85; margin-top:4px; letter-spacing:.4px; }
+.cd--done{ background: linear-gradient(180deg, var(--leaf), var(--teal)); }
+
+.h{
+  display:flex; align-items:center; gap:10px;
+  font-size: clamp(20px, 5.5vw, 24px);
+  font-weight:900; margin:0 0 10px;
+  color:var(--ink);
+}
+.h .pill{
+  display:inline-block; font-size:14px; font-family:"Caveat", cursive;
+  background:linear-gradient(135deg, var(--teal), var(--leaf));
+  color:#fff; padding:2px 10px; border-radius:999px;
+}
+
+.checks{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+.checks li{
+  display:flex; align-items:center; gap:12px;
+  background:#fff; border:1px solid rgba(255,178,134,.45);
+  border-radius:var(--radius-md); padding:12px 14px;
+  font-weight:500; color:var(--ink);
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease, background .25s ease;
+  cursor:pointer; user-select:none;
+  position:relative; overflow:hidden;
+}
+.checks li:hover{ transform: translateX(-3px); box-shadow: var(--shadow-md);}
+.checks li:active{ transform: scale(.985); }
+.checks li.done{ background: linear-gradient(135deg, #fff8ee 0%, #fff 100%);}
+.checks .box{
+  width:24px; height:24px; border-radius:8px;
+  border:2px solid var(--coral);
+  display:grid; place-items:center;
+  flex:0 0 auto;
+  background:#fff;
+  transition: background .25s ease, transform .35s cubic-bezier(.34,1.56,.64,1), border-color .25s ease;
+  position:relative;
+}
+.checks .box svg{
+  width:14px; height:14px;
+  stroke:#fff; stroke-width:3.5; fill:none;
+  stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray: 22;
+  stroke-dashoffset: 22;
+  transition: stroke-dashoffset .45s cubic-bezier(.34,1.56,.64,1);
+}
+.checks li.done .box{
+  background:linear-gradient(135deg, var(--coral), var(--gold));
+  border-color:transparent;
+  animation: boxPop .45s cubic-bezier(.34,1.56,.64,1);
+}
+.checks li.done .box svg{ stroke-dashoffset: 0; }
+@keyframes boxPop{
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.25) rotate(-6deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+.checks li.done .text{ text-decoration: line-through; opacity:.55; }
+.checks li:focus-visible{ outline: 2px solid var(--coral); outline-offset: 2px; }
+
+.cta{ display:grid; gap:10px; margin-top:14px;}
+.btn{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  padding:14px 16px; border-radius:999px; font-weight:800; font-size:16px;
+  text-decoration:none; border:none; cursor:pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform .15s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease, filter .2s ease;
+  position:relative; overflow:hidden;
+}
+.btn:hover{ transform: translateY(-2px); filter: brightness(1.04); }
+.btn:active{ transform: translateY(1px) scale(.98); }
+.btn--wa   { background:linear-gradient(135deg,#25D366 0%, #128C7E 100%); color:#fff; }
+.btn--cal  { background:linear-gradient(135deg,#ff6f47 0%, #c8506b 100%); color:#fff; }
+.btn--waze { background:linear-gradient(135deg,#33ccff 0%, #2fa6a3 100%); color:#fff; }
+.btn--pay  { background:linear-gradient(135deg,#ffce5c 0%, #ff6f47 60%, #c8506b 100%); color:#fff; position:relative; }
+.btn--pay::after{
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  box-shadow: 0 0 0 0 rgba(255,206,92,.55); animation: payPulse 2.4s ease-in-out infinite;
+}
+.btn--ghost{ background:#fff; color:var(--ink); border:1.5px solid rgba(58,31,63,.12); }
+.btn--inline{
+  display:inline-flex; padding:9px 14px; border-radius:999px;
+  font-size:13px; font-weight:800; gap:6px; margin-top:10px;
+  text-decoration:none; box-shadow: 0 6px 14px rgba(255,111,71,.30);
+}
+@keyframes payPulse{
+  0%,100%{ box-shadow: 0 0 0 0 rgba(255,206,92,.55); }
+  50%    { box-shadow: 0 0 0 12px rgba(255,206,92,0); }
+}
+.btn .em{ font-size:18px; }
+.cta-row{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+@media (max-width:380px){ .cta-row{ grid-template-columns:1fr; } }
+
+.note{
+  text-align:center; color:#fff; opacity:.92;
+  margin-top:20px; padding:0 6px;
+  font-size:14px; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(58,31,63,.45);
+}
+.signoff{
+  text-align:center; color:#fff;
+  margin-top:18px;
+  font-family:"Pacifico", cursive;
+  font-size: clamp(20px, 5.5vw, 26px);
+  text-shadow: 0 2px 8px rgba(58,31,63,.45);
+}
+
+.deco{
+  position:fixed; pointer-events:none; z-index:-1;
+  font-size:22px; opacity:.55;
+  animation: floatY 8s ease-in-out infinite alternate;
+}
+.deco--1{ top:18%; left:6%; animation-duration:7s; }
+.deco--2{ top:42%; right:7%; animation-duration:9s; }
+.deco--3{ top:65%; left:8%; animation-duration:10s; }
+.deco--4{ top:80%; right:10%; animation-duration:8s; }
+
+#confetti-canvas{
+  position:fixed; inset:0;
+  width:100vw; height:100vh;
+  pointer-events:none; z-index:9999;
+}
+
+.easter{
+  position:fixed; inset:0; z-index:9998;
+  display:none;
+  align-items:center; justify-content:center;
+  background: radial-gradient(circle at 50% 50%, rgba(91,42,89,.85), rgba(20,8,28,.95));
+  backdrop-filter: blur(8px);
+  animation: easterFade .4s ease;
+}
+.easter.show{ display:flex; }
+.easter__inner{
+  text-align:center; color:#fff; padding:32px;
+  animation: easterPop .7s cubic-bezier(.34,1.56,.64,1);
+}
+.easter__big{
+  font-family:"Pacifico", cursive;
+  font-size: clamp(40px, 12vw, 72px);
+  background: linear-gradient(135deg, #ffce5c 0%, #ff6f47 50%, #6fd6cf 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow: 0 4px 24px rgba(255,206,92,.4);
+}
+.easter__sub{
+  font-size: 18px; font-weight:700; margin-top: 12px;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+.easter__close{
+  margin-top:20px; padding: 10px 22px; border-radius:999px; border:none;
+  background: linear-gradient(135deg,#ff6f47, #ffce5c); color:#fff;
+  font-weight:800; font-size:14px; cursor:pointer;
+  box-shadow: var(--shadow-md);
+}
+@keyframes easterFade { from{opacity:0} to{opacity:1} }
+@keyframes easterPop {
+  0%   { transform: scale(.4) rotate(-8deg); opacity:0; }
+  60%  { transform: scale(1.08) rotate(2deg); opacity:1; }
+  100% { transform: scale(1) rotate(0); opacity:1; }
+}
+
+@keyframes floatY{
+  0%   { transform: translateY(0) rotate(-4deg); }
+  100% { transform: translateY(-14px) rotate(4deg); }
+}
+@media (prefers-reduced-motion: reduce){
+  .deco { animation: none !important; }
+}
+.no-anim .deco,
+.no-anim .btn--pay::after,
+.no-anim *{
+  animation: none !important;
+  transition-duration: .01ms !important;
+}
+
+::selection{ background: var(--coral); color:#fff; }
+a{ color: var(--coral-deep); }
+.weather-pill{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  background:linear-gradient(135deg,#fff 0%, #ffeed4 100%);
+  padding:10px 16px; border-radius:999px;
+  font-weight:700; font-size:14px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255,178,134,.55);
+  width:100%;
+}
+.map-wrap-detail{
+  border-radius:var(--radius-md);
+  overflow:hidden; box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255,178,134,.55);
+  background:#f5f5f5;
+  padding:0 !important;
+}
+.map-wrap-detail iframe{ display:block; width:100%; border:0; height:200px; }
+.btn--share{
+  background:linear-gradient(135deg,#34b7f1 0%, #25D366 100%); color:#fff;
+}
+
+/* RSVP form */
+.rsvp-form{ display:grid; gap:10px; }
+.rsvp-form__row{ display:grid; grid-template-columns: 1fr 1fr; gap:8px; }
+@media (max-width:380px){ .rsvp-form__row{ grid-template-columns: 1fr; } }
+.rsvp-form input{
+  width:100%; padding:13px 14px; border-radius:14px;
+  border:1.5px solid rgba(58,31,63,.15);
+  background:#fff; color:var(--ink);
+  font-family:"Heebo", sans-serif; font-size:15px; font-weight:500;
+  transition: border-color .2s ease, box-shadow .2s ease;
+  box-shadow: 0 2px 6px rgba(58,31,63,.05);
+  text-align:right;
+}
+.rsvp-form input:focus{
+  outline:none; border-color: var(--coral);
+  box-shadow: 0 0 0 3px rgba(255,111,71,.15);
+}
+.rsvp-form input::placeholder{ color: rgba(75,47,58,.4); font-weight:500; }
+.rsvp-form input:invalid:not(:placeholder-shown){ border-color: #e6492a; }
+
+/* Songs block */
+.songs-block{ display:grid; gap:8px; margin-top:4px; }
+.songs-label{
+  font-family:"Heebo", sans-serif; font-size:14px; font-weight:600;
+  color: var(--ink); display:flex; align-items:center; gap:6px;
+  margin-bottom:2px;
+}
+.songs-label small{ font-weight:400; opacity:.65; font-size:12px; }
+.songs-label .em{ font-size:16px; }
+.song-add{
+  background:transparent; border:1.5px dashed rgba(58,31,63,.25);
+  color: var(--ink); padding:9px 12px; border-radius:12px;
+  font-family:"Heebo", sans-serif; font-size:13px; font-weight:600;
+  cursor:pointer; transition: all .2s ease;
+}
+.song-add:hover{ border-color: var(--coral); color: var(--coral); background: rgba(255,111,71,.05); }
+.song-add[hidden]{ display:none; }
+.songs-deadline{
+  font-family:"Heebo", sans-serif; font-size:12.5px; font-weight:500;
+  color: rgba(75,47,58,.7); text-align:center; margin:4px 0 0;
+  line-height:1.5;
+}
+
+/* Songs picked list */
+.songs-list-card{
+  background: rgba(255,255,255,.85);
+  border-radius:18px; padding:0; overflow:hidden;
+  border:1.5px solid rgba(255,111,71,.18);
+  box-shadow: 0 4px 14px rgba(58,31,63,.08);
+}
+.songs-list-toggle{
+  width:100%; background:transparent; border:0;
+  padding:14px 16px; display:flex; align-items:center; justify-content:space-between;
+  cursor:pointer; font-family:"Heebo", sans-serif;
+  color: var(--ink); font-size:15px; font-weight:700;
+  transition: background .15s ease;
+}
+.songs-list-toggle:hover{ background: rgba(255,111,71,.04); }
+.songs-list-title{ display:flex; align-items:center; gap:8px; }
+.songs-list-title .em{ font-size:18px; }
+.songs-list-count{
+  background: linear-gradient(135deg, #ff6f47, #ff9050);
+  color:#fff; font-size:12px; font-weight:700;
+  padding:2px 9px; border-radius:999px; min-width:24px; text-align:center;
+}
+.songs-list-chev{ width:18px; height:18px; transition: transform .25s ease; opacity:.55; }
+.songs-list-toggle[aria-expanded="true"] .songs-list-chev{ transform: rotate(180deg); }
+.songs-list-body{ padding:6px 14px 14px; border-top:1px solid rgba(58,31,63,.08); }
+.songs-list-body[hidden]{ display:none; }
+.songs-list{ list-style:none; padding:0; margin:0; max-height: 280px; overflow-y:auto; }
+.songs-list li{
+  display:flex; align-items:center; gap:10px;
+  padding:10px 4px; border-bottom:1px dashed rgba(58,31,63,.08);
+  font-family:"Heebo", sans-serif; font-size:14px; color: var(--ink);
+}
+.songs-list li:last-child{ border-bottom:0; }
+.songs-list li .rank{
+  font-size:13px; font-weight:700; color: rgba(75,47,58,.5);
+  min-width:22px; text-align:center;
+}
+.songs-list li.top5 .rank{ font-size:18px; }
+.songs-list li.top5{ font-weight:600; }
+.songs-list li .song-name{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.songs-list li .song-count{
+  font-size:12.5px; font-weight:700; color: var(--coral);
+  background: rgba(255,111,71,.1); padding:3px 9px; border-radius:999px;
+  white-space:nowrap;
+}
+.songs-list-empty{
+  text-align:center; font-family:"Heebo", sans-serif; font-size:13.5px;
+  color: rgba(75,47,58,.6); padding:18px 8px 8px; margin:0;
+}
+
+/* Closed state */
+.songs-block.is-closed input,
+.songs-block.is-closed .song-add{ pointer-events:none; opacity:.5; }
+.songs-block.is-closed .songs-deadline::before{
+  content:'🔒 ההצעות נסגרו — תודה לכל מי שהשתתף!'; display:block;
+  color: var(--coral); font-weight:700; margin-bottom:4px;
+}
+.songs-block.is-closed .songs-deadline > *,
+.songs-block.is-closed .songs-deadline{ font-size:12.5px; }
+
+/* Night mode */
+body.night-mode .songs-list-card{ background: rgba(255,255,255,.92); }
+
+/* Night mode (auto after 19:00) */
+body.night-mode{
+  background:
+    radial-gradient(120% 60% at 50% 0%, #4a2870 0%, #3a1f3f 30%, #1f0f33 60%, #0a0420 100%) no-repeat,
+    #0a0420;
+  background-attachment: fixed, fixed;
+}
+body.night-mode html, html.night-mode{ background:#4a2870; }
+body.night-mode .note,
+body.night-mode .signoff,
+body.night-mode .signature{ text-shadow: 0 2px 12px rgba(0,0,0,.6); }
+body.night-mode .deco{ opacity:.4; }
 </style>
 </head>
 <body>
-  <main class="wrap">
-    <h1>Gal · Landing</h1>
-    <p class="sub">דפי הזמנה, אירועים ועסק</p>
-    <div class="section section--personal">
-      <div class="section-h"><span class="dot" aria-hidden="true"></span>אישי</div>
-      <ul>
-        <li>
-          <a class="card" href="/personal/gagler-30">
-            <span class="t">גגלר 30 — Tropical Rooftop<small>06.06.2026 · פלורנטין</small></span>
-            <span class="arrow" aria-hidden="true">←</span>
+
+<div class="deco deco--1" aria-hidden="true">🌴</div>
+<div class="deco deco--2" aria-hidden="true">🍹</div>
+<div class="deco deco--3" aria-hidden="true">🌅</div>
+<div class="deco deco--4" aria-hidden="true">🍍</div>
+
+<canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+<!-- ===== DJ Edry autoplay banner ===== -->
+<div id="dj-banner" class="dj-banner" role="region" aria-label="DJ Edry — Afro House">
+  <div class="dj-banner__head">
+    <div class="dj-banner__title">
+      <span class="dj-banner__pulse" aria-hidden="true"></span>
+      🎧 DJ Ohad Edry · My Afro House 2
+    </div>
+    <button class="dj-banner__close" id="dj-close" type="button" aria-label="סגור">×</button>
+  </div>
+  <div class="dj-banner__player">
+    <iframe id="dj-iframe"
+            allow="autoplay"
+            scrolling="no" frameborder="no"
+            src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fohad-edry%2Fdj-ohad-edry-my-afro-house-2%23t%3D18%3A30&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false&buying=false&sharing=false&download=false&color=%23ff6f47"></iframe>
+  </div>
+</div>
+
+<style>
+.dj-banner{
+  position:fixed; left:50%; bottom:12px; transform:translateX(-50%);
+  z-index: 9990;
+  width: min(560px, calc(100vw - 20px));
+  border-radius: 18px;
+  background: linear-gradient(135deg, #25151f 0%, #3a1f3f 50%, #c8506b 100%);
+  box-shadow: 0 20px 50px rgba(20,8,28,.55), 0 0 0 1px rgba(255,255,255,.08) inset;
+  color:#fff;
+  overflow: hidden;
+  animation: djSlideUp .55s cubic-bezier(.34,1.56,.64,1) both;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+.dj-banner.is-hidden{ display:none; }
+@keyframes djSlideUp{
+  from{ transform: translate(-50%, 120%); opacity:0; }
+  to  { transform: translate(-50%, 0);    opacity:1; }
+}
+.dj-banner__head{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:8px; padding: 8px 10px 6px 14px;
+}
+.dj-banner__title{
+  font-family:"Heebo", sans-serif; font-weight:800; font-size:13px;
+  letter-spacing:.2px;
+  display:flex; align-items:center; gap:8px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.dj-banner__pulse{
+  width:8px; height:8px; border-radius:50%;
+  background: #ffce5c;
+  box-shadow: 0 0 0 0 rgba(255,206,92,.7);
+  animation: djPulseDot 1.6s ease-out infinite;
+  flex:0 0 auto;
+}
+@keyframes djPulseDot{
+  0%   { box-shadow: 0 0 0 0 rgba(255,206,92,.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(255,206,92,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,206,92,0); }
+}
+.dj-banner__close{
+  width:26px; height:26px; flex:0 0 auto;
+  border-radius:50%; border:0; cursor:pointer;
+  background: rgba(255,255,255,.14); color:#fff;
+  font-size:18px; line-height:1; font-weight:600;
+  display:grid; place-items:center;
+  transition: background .15s ease;
+}
+.dj-banner__close:hover{ background: rgba(255,255,255,.26); }
+.dj-banner__player{
+  padding: 0 8px 8px;
+}
+.dj-banner__player iframe{
+  display:block; width:100%; height:120px;
+  border:0; border-radius: 12px;
+  background:#25151f;
+}
+@media (max-width: 380px){
+  .dj-banner__title{ font-size:12px; }
+}
+</style>
+
+<div class="easter" id="easter" role="dialog" aria-modal="true" aria-label="המסיבה התחילה">
+  <div class="easter__inner">
+    <div style="font-size:64px; line-height:1">🎉🌴🍹</div>
+    <div class="easter__big">המסיבה התחילה!</div>
+    <div class="easter__sub">נתראה על הגג ✨</div>
+    <button class="easter__close" id="easter-close" type="button">סגור</button>
+  </div>
+</div>
+
+<main class="page">
+
+  <section class="hero" aria-label="הזמנה">
+    <img class="hero__img" src="גגלר 30.jpg" alt="גגלר 30 — Tropical Rooftop Party"
+         onerror="this.style.display='none'" />
+  </section>
+
+  <header class="title-block">
+    <span class="eyebrow">!You're invited 🍹</span>
+  </header>
+
+  <section class="card intro card--tappable" aria-label="פתיח">
+    <p>
+      כמיטב המסורת — שקיעה על הגג, מוזיקה טובה עם <strong>DJ Edry</strong>, אלכוהול, פיצות,
+      אנשים יפים ואווירה של קיץ בתל אביב.
+    </p>
+    <p>
+      מסיבה טרופית קלילה, שמחה ומיוחדת — לחגוג כמו שצריך את גיל <strong>30</strong>.
+    </p>
+    <div class="quote">
+      רוב הדברים שהשגתי הגיעו בעמל רב, אבל יש משהו אחד שקיבלתי בלי להתאמץ — <strong>תאריך לידה יפה</strong>. ופעם בעשור הוא עוד יותר מגניב… <span class="kicker big-date">06.06.26</span>
+    </div>
+  </section>
+
+  <section class="card card--solid" aria-label="פרטים">
+    <h2 class="h">📍 הפרטים החשובים <span class="pill" style="font-size: 16px">save the date</span></h2>
+
+    <div class="details">
+      <div class="detail">
+        <div class="ico" aria-hidden="true">📅</div>
+        <div class="label">תאריך ושעה</div>
+        <div class="value">שבת · 06.06.26 <small>23:00 – 16:30</small></div>
+      </div>
+      <div class="detail">
+        <div class="ico" aria-hidden="true">👕</div>
+        <div class="label">קוד לבוש</div>
+        <div class="value">טרופי / חוף <small>וייב של חופש וכיף</small></div>
+      </div>
+      <div class="detail detail--compact">
+        <div class="ico" aria-hidden="true">📍</div>
+        <div class="label">איפה זה קורה</div>
+        <div class="value">חיים ויטאל 12 <small>קומה 4, פלורנטין, תל אביב</small></div>
+      </div>
+      <div class="detail detail--compact">
+        <div class="ico" aria-hidden="true">💸</div>
+        <div class="label">השתתפות</div>
+        <div class="value">100 ₪ <small>פייבוקס · 054-7523288</small></div>
+      </div>
+      <div class="detail detail--wide" style="text-align:center; padding:12px;">
+        <div id="weather-display" class="weather-pill">⏳ טוען תחזית...</div>
+      </div>
+      <div class="detail map-wrap-detail" style="grid-column: span 7;">
+        <iframe src="https://maps.google.com/maps?q=%D7%97%D7%99%D7%99%D7%9D+%D7%95%D7%99%D7%98%D7%90%D7%9C+12+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91&output=embed&hl=he" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="חיים ויטאל 12, תל אביב"></iframe>
+      </div>
+      <div class="detail" style="grid-column: span 3; padding:14px 12px;">
+        <div class="ico" aria-hidden="true">🅿️</div>
+        <div class="label">חניה מומלצת</div>
+        <div class="value" style="font-size:14px;">חניון ליבר <small>אחוזת החוף
+9 דקות הליכה</small></div>
+      </div>
+      <div class="detail detail--wide" style="padding:12px;">
+        <div class="cta-row" style="margin:0;">
+          <a class="btn btn--waze" href="https://waze.com/ul?q=%D7%97%D7%99%D7%99%D7%9D%20%D7%95%D7%99%D7%98%D7%90%D7%9C%2012%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&navigate=yes" target="_blank" rel="noopener">
+            <span class="em">🚗</span> ניווט לאירוע
           </a>
-        </li>
-      </ul>
+          <a class="btn btn--waze" href="https://waze.com/ul?q=%D7%97%D7%A0%D7%99%D7%95%D7%9F%20%D7%9C%D7%99%D7%91%D7%A8%20%D7%90%D7%97%D7%95%D7%96%D7%AA%20%D7%94%D7%97%D7%95%D7%A3%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&navigate=yes" target="_blank" rel="noopener">
+            <span class="em">🅿️</span> ניווט לחניון
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="section section--biz">
-      <div class="section-h"><span class="dot" aria-hidden="true"></span>עסקי</div>
-      <ul>
-        <li class="empty">בקרוב — כאן יופיעו דפי נחיתה עסקיים</li>
-      </ul>
+
+    <h3 class="h" style="margin-top:18px">⏳ עוד קצת והאי שלנו</h3>
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="cd"><div class="n" id="cd-d">--</div><div class="l">ימים</div></div>
+      <div class="cd"><div class="n" id="cd-h">--</div><div class="l">שעות</div></div>
+      <div class="cd"><div class="n" id="cd-m">--</div><div class="l">דקות</div></div>
+      <div class="cd"><div class="n" id="cd-s">--</div><div class="l">שניות</div></div>
     </div>
-    <div class="footer">private · share specific links only</div>
-  </main>
+  </section>
+
+  <section class="card" aria-label="צ'קליסט">
+    <h2 class="h">✅ מה אני צריך מכם עכשיו?</h2>
+    <ul class="checks" id="checklist">
+      <li data-emoji="📅"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">לשריין את התאריך ביומן</span></li>
+      <li data-emoji="🤩"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">להתחיל להתרגש</span></li>
+      <li data-emoji="🌴"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">לדאוג לביגוד מתאים</span></li>
+      <li data-emoji="🍹"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5,12 10,17 19,7"/></svg></span><span class="text">ולהמתין בסבלנות 😏</span></li>
+    </ul>
+  </section>
+
+  <section class="card card--solid" aria-label="פעולות">
+    <h2 class="h">🎟️ אשרו הגעה</h2>
+
+    <div class="cta">
+      <form class="rsvp-form" id="rsvp-form" autocomplete="on">
+        <div class="rsvp-form__row">
+          <input type="text" id="rsvp-name" name="name" required placeholder="שם מלא" autocomplete="name" />
+          <input type="tel" id="rsvp-phone" name="phone" required placeholder="טלפון" inputmode="tel" autocomplete="tel" pattern="[0-9\-\+\s]{8,}" />
+        </div>
+
+        <div class="songs-block" id="songs-block">
+          <label class="songs-label" for="song-1">
+            <span class="em">🎵</span> שיר שחייב להתנגן <small>(אופציונלי · עד 3)</small>
+          </label>
+          <input type="text" id="song-1" name="song1" placeholder="שם השיר / אמן" maxlength="120" />
+          <input type="text" id="song-2" name="song2" placeholder="שיר שני" maxlength="120" class="song-extra" hidden />
+          <input type="text" id="song-3" name="song3" placeholder="שיר שלישי" maxlength="120" class="song-extra" hidden />
+          <button type="button" class="song-add" id="song-add">+ עוד שיר</button>
+          <p class="songs-deadline">5 השירים הכי מבוקשים — DJ Edry ישלב אותם במסיבה 🔥<br>ניתן להוסיף עד 05.06.26</p>
+        </div>
+        <button class="btn btn--wa" id="wa-btn" type="submit" data-confetti="1" style="font-family: Heebo">
+          <span class="em">💬</span> אשרו הגעה בוואטסאפ
+        </button>
+      </form>
+
+      <div class="songs-list-card" id="songs-list-card" hidden>
+        <button type="button" class="songs-list-toggle" id="songs-list-toggle" aria-expanded="false">
+          <span class="songs-list-title">
+            <span class="em">🎧</span> השירים של המסיבה
+            <span class="songs-list-count" id="songs-list-count">0</span>
+          </span>
+          <svg class="songs-list-chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6,9 12,15 18,9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="songs-list-body" id="songs-list-body" hidden>
+          <ol class="songs-list" id="songs-list"></ol>
+          <p class="songs-list-empty" id="songs-list-empty" hidden>עדיין אין הצעות — תהיו הראשונים 🎶</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card card--solid" aria-label="תשלום ושיתוף">
+    <div class="cta">
+      <a class="btn btn--pay paybox-link" href="#" target="_blank" rel="noopener" data-confetti="1">
+        <span class="em">💳</span> תשלום בקבוצת פייבוקס · 100 ₪
+      </a>
+
+      <div class="cta-row">
+        <a class="btn btn--cal" id="gcal-btn"
+           href="#"
+           target="_blank" rel="noopener">
+          <span class="em">🗓️</span> Google Calendar
+        </a>
+        <button class="btn btn--ghost" id="copy-addr" type="button">
+          <span class="em">📋</span> <span id="copy-addr-text" style="font-family: Heebo">העתק כתובת</span>
+        </button>
+      </div>
+
+      <button class="btn btn--share" id="wa-share-btn" type="button" style="font-family: Heebo">
+        <span class="em">📤</span> שתף את ההזמנה בוואטסאפ
+      </button>
+    </div>
+  </section>
+
+  <p class="note">
+    מוזמנים להזמין חברים — רק בתיאום מולי 🙏<br>
+    מי שלא יכול או לא מתכנן להגיע — מוזמן לצאת מהקבוצה. <em>No hard feelings</em> ❤️
+  </p>
+
+  <p class="signoff" style="font-family: Heebo">נתראה על הגג 🍹🌅🎶</p>
+  <p class="signature" style="font-family: Heebo; text-align: center; color: #fff; opacity: .85; margin-top: 8px; font-size: 20px; text-shadow: 0 2px 8px rgba(58,31,63,.45)">גל אדלר</p>
+</main>
+
+<script>
+var PAYBOX_URL = "#";
+var SONGS_URL = "https://script.google.com/macros/s/AKfycbzjPZs0x9dH-Xe-R_t6iLxlhG1h6Dv53WQbpAOVn0cO8zQW0i7n7gZNUVBc2Q4zr8ClxA/exec";
+var SONGS_DEADLINE = new Date('2026-06-05T23:59:59+03:00').getTime();
+
+/* ===== Songs: fetch + render aggregated list (JSONP — bypasses CORS) ===== */
+var __songsCallbackCounter = 0;
+function loadSongsList(){
+  var card = document.getElementById('songs-list-card');
+  if (!card || !SONGS_URL) return;
+
+  var cbName = '__songsCallback_' + (++__songsCallbackCounter);
+  var script = document.createElement('script');
+  var cleanup = function(){
+    try { delete window[cbName]; } catch(e){ window[cbName] = undefined; }
+    if (script.parentNode) script.parentNode.removeChild(script);
+  };
+  var timer = setTimeout(cleanup, 8000);
+
+  window[cbName] = function(data){
+    clearTimeout(timer);
+    cleanup();
+    if (data && data.ok) renderSongsList(data);
+  };
+
+  script.src = SONGS_URL + (SONGS_URL.indexOf('?') >= 0 ? '&' : '?') +
+               'callback=' + cbName + '&_=' + Date.now();
+  script.onerror = function(){ clearTimeout(timer); cleanup(); };
+  document.head.appendChild(script);
+}
+
+function renderSongsList(data){
+  var card = document.getElementById('songs-list-card');
+  var listEl = document.getElementById('songs-list');
+  var emptyEl = document.getElementById('songs-list-empty');
+  var countEl = document.getElementById('songs-list-count');
+  if (!card || !listEl) return;
+
+  var songs = (data && data.songs) || [];
+  card.hidden = false;
+
+  // Update count badge
+  countEl.textContent = data.total_submissions || songs.length || 0;
+
+  // Empty state
+  if (!songs.length){
+    listEl.innerHTML = '';
+    emptyEl.hidden = false;
+    return;
+  }
+  emptyEl.hidden = true;
+
+  // Render
+  var html = songs.map(function(s, i){
+    var isTop5 = i < 5;
+    var rank = isTop5 ? '👑' : (i+1);
+    var name = (s.name || '').replace(/[<>&]/g, function(c){ return {'<':'&lt;','>':'&gt;','&':'&amp;'}[c]; });
+    return '<li class="' + (isTop5 ? 'top5' : '') + '">' +
+             '<span class="rank">' + rank + '</span>' +
+             '<span class="song-name">' + name + '</span>' +
+             '<span class="song-count">🔥 ' + s.count + 'x</span>' +
+           '</li>';
+  }).join('');
+  listEl.innerHTML = html;
+
+  // Closed-state UI
+  if (data.closed){
+    var block = document.getElementById('songs-block');
+    if (block) block.classList.add('is-closed');
+  }
+}
+
+(function(){
+  // Toggle expand/collapse
+  var toggle = document.getElementById('songs-list-toggle');
+  var body = document.getElementById('songs-list-body');
+  if (toggle && body){
+    toggle.addEventListener('click', function(){
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      body.hidden = expanded;
+    });
+  }
+
+  // Lock songs UI past deadline
+  if (Date.now() >= SONGS_DEADLINE){
+    var block = document.getElementById('songs-block');
+    if (block) block.classList.add('is-closed');
+  }
+
+  // Fetch on load + refocus + every 60s
+  loadSongsList();
+  window.addEventListener('focus', loadSongsList);
+  setInterval(loadSongsList, 60000);
+})();
+
+(function(){
+  if (!PAYBOX_URL || PAYBOX_URL === "#") return;
+  document.querySelectorAll('.paybox-link').forEach(function(a){
+    a.setAttribute('href', PAYBOX_URL);
+  });
+})();
+
+(function(){
+  var TARGET_UTC = Date.UTC(2026, 5, 6, 13, 30, 0);
+  var attempts = 0, MAX = 50;
+  var timerId = null;
+  var fired = false;
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+
+  function setVal(el, val){
+    if (el.textContent !== String(val)){
+      el.textContent = val;
+      el.classList.remove('tick');
+      void el.offsetWidth;
+      el.classList.add('tick');
+    }
+  }
+
+  function render($d, $h, $m, $s, $cd){
+    var diff = TARGET_UTC - Date.now();
+    if (diff <= 0){
+      $cd.innerHTML = '<div class="cd cd--done" style="grid-column:1/-1">' +
+                        '<div class="n">🎉 עכשיו! 🎉</div>' +
+                        '<div class="l">המסיבה כאן</div>' +
+                      '</div>';
+      if (timerId){ clearInterval(timerId); timerId = null; }
+      if (!fired){
+        fired = true;
+        if (window.__galerEasterEgg) window.__galerEasterEgg();
+      }
+      return;
+    }
+    var sec = Math.floor(diff / 1000);
+    var d   = Math.floor(sec / 86400); sec -= d * 86400;
+    var h   = Math.floor(sec / 3600);  sec -= h * 3600;
+    var m   = Math.floor(sec / 60);    sec -= m * 60;
+    setVal($d, d);
+    setVal($h, pad(h));
+    setVal($m, pad(m));
+    setVal($s, pad(sec));
+  }
+
+  function init(){
+    var $d  = document.getElementById('cd-d');
+    var $h  = document.getElementById('cd-h');
+    var $m  = document.getElementById('cd-m');
+    var $s  = document.getElementById('cd-s');
+    var $cd = document.getElementById('countdown');
+
+    if (!$d || !$h || !$m || !$s || !$cd){
+      attempts++;
+      if (attempts <= MAX) return setTimeout(init, 100);
+      return;
+    }
+    render($d, $h, $m, $s, $cd);
+    if (timerId) clearInterval(timerId);
+    timerId = setInterval(function(){ render($d, $h, $m, $s, $cd); }, 1000);
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+
+(function(){
+  function init(){
+    var list = document.getElementById('checklist');
+    if (!list) return;
+    var items = list.querySelectorAll('li');
+    items.forEach(function(li){
+      li.setAttribute('role', 'checkbox');
+      li.setAttribute('tabindex', '0');
+      li.setAttribute('aria-checked', 'false');
+      function toggle(e){
+        var on = li.classList.toggle('done');
+        li.setAttribute('aria-checked', on ? 'true' : 'false');
+        if (on && window.__galerMiniConfetti){
+          var rect = li.getBoundingClientRect();
+          var emoji = li.getAttribute('data-emoji');
+          window.__galerMiniConfetti(rect.right - 18, rect.top + rect.height/2, emoji);
+          if (navigator.vibrate) navigator.vibrate(15);
+        }
+        if (on){
+          var allDone = list.querySelectorAll('li.done').length === items.length;
+          if (allDone && window.__galerConfetti){
+            setTimeout(function(){ window.__galerConfetti(60); }, 200);
+          }
+        }
+      }
+      li.addEventListener('click', toggle);
+      li.addEventListener('keydown', function(e){
+        if (e.key === ' ' || e.key === 'Enter'){
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+  }
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+
+(function(){
+  function pad(n){ return n<10 ? '0'+n : ''+n; }
+  function fmt(date){
+    return date.getUTCFullYear()
+      + pad(date.getUTCMonth()+1)
+      + pad(date.getUTCDate()) + 'T'
+      + pad(date.getUTCHours())
+      + pad(date.getUTCMinutes())
+      + pad(date.getUTCSeconds()) + 'Z';
+  }
+  var start = new Date(Date.UTC(2026, 5, 6, 13, 30, 0));
+  var end   = new Date(Date.UTC(2026, 5, 6, 20,  0, 0));
+  var now   = new Date();
+
+  var ics = [
+    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Galer 30//Tropical Rooftop//HE',
+    'CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT',
+    'UID:galer-30-' + Date.now() + '@rooftop',
+    'DTSTAMP:' + fmt(now),'DTSTART:' + fmt(start),'DTEND:'   + fmt(end),
+    'SUMMARY:גגלר 30 — Tropical Rooftop Party 🌴🌇',
+    'DESCRIPTION:מסיבת גג טרופית לחגוג 30. שקיעה\\, מוזיקה עם DJ Edry\\, דרינקים\\, פיצות. קוד לבוש: טרופי/חוף. השתתפות: 100₪ בביט/פייבוקס 054-7523288.',
+    'LOCATION:חיים ויטאל 12\\, קומה 4\\, תל אביב (פלורנטין)',
+    'GEO:32.0556;34.7706',
+    'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY',
+    'DESCRIPTION:גגלר 30 — מחר על הגג!','END:VALARM',
+    'END:VEVENT','END:VCALENDAR'
+  ].join('\r\n');
+
+  var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+  var url  = URL.createObjectURL(blob);
+  var btn  = document.getElementById('ics-btn');
+  if (btn) btn.setAttribute('href', url);
+})();
+
+(function(){
+  var form = document.getElementById('rsvp-form');
+  var btn = document.getElementById('wa-btn');
+  if (!form || !btn) return;
+
+  // Restore saved values
+  try {
+    var saved = JSON.parse(localStorage.getItem('galer-rsvp') || '{}');
+    if (saved.name) document.getElementById('rsvp-name').value = saved.name;
+    if (saved.phone) document.getElementById('rsvp-phone').value = saved.phone;
+  } catch(e){}
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('rsvp-name').value.trim();
+    var phone = document.getElementById('rsvp-phone').value.trim();
+    if (!name || !phone) return;
+
+    // Collect songs (1-3, only non-empty)
+    var songs = [];
+    ['song-1','song-2','song-3'].forEach(function(id){
+      var v = (document.getElementById(id) && document.getElementById(id).value || '').trim();
+      if (v) songs.push(v);
+    });
+
+    try { localStorage.setItem('galer-rsvp', JSON.stringify({name:name, phone:phone})); } catch(e){}
+
+    // Fire-and-forget submission to Apps Script (if configured) — does NOT block WhatsApp open
+    // We use a hidden iframe + form trick to bypass CORS preflight entirely.
+    // Apps Script accepts standard form-urlencoded POSTs without any preflight checks.
+    if (typeof SONGS_URL !== 'undefined' && SONGS_URL && songs.length){
+      try {
+        var iframe = document.getElementById('__songs_submit_frame');
+        if (!iframe){
+          iframe = document.createElement('iframe');
+          iframe.id = '__songs_submit_frame';
+          iframe.name = '__songs_submit_frame';
+          iframe.style.display = 'none';
+          document.body.appendChild(iframe);
+        }
+        var hiddenForm = document.createElement('form');
+        hiddenForm.method = 'POST';
+        hiddenForm.action = SONGS_URL;
+        hiddenForm.target = '__songs_submit_frame';
+        hiddenForm.style.display = 'none';
+        var pInput = document.createElement('input');
+        pInput.type = 'hidden';
+        pInput.name = 'payload';
+        pInput.value = JSON.stringify({ name:name, phone:phone, songs:songs });
+        hiddenForm.appendChild(pInput);
+        document.body.appendChild(hiddenForm);
+        hiddenForm.submit();
+        setTimeout(function(){
+          if (hiddenForm.parentNode) hiddenForm.parentNode.removeChild(hiddenForm);
+          loadSongsList();
+        }, 2000);
+      } catch(err){ console.warn('Songs submit failed:', err); }
+    }
+
+    var msg = '🌴 מאשר/ת הגעה לגגלר 30!\n\n' +
+              '👤 שם: ' + name + '\n' +
+              '📱 טלפון: ' + phone;
+    if (songs.length){
+      msg += '\n\n🎵 שירים שאני אשמח לשמוע:\n' + songs.map(function(s){ return '• ' + s; }).join('\n');
+    }
+    msg += '\n\n🍹 נתראה על הגג!';
+
+    var url = 'https://wa.me/972547523288?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank', 'noopener');
+
+    if (window.__galerConfetti) window.__galerConfetti(70);
+    if (navigator.vibrate) navigator.vibrate([20, 60, 20]);
+  });
+
+  // Reveal extra song fields on demand
+  var addBtn = document.getElementById('song-add');
+  var extras = Array.prototype.slice.call(document.querySelectorAll('.song-extra'));
+  if (addBtn && extras.length){
+    addBtn.addEventListener('click', function(){
+      var next = extras.find(function(el){ return el.hidden; });
+      if (next){ next.hidden = false; next.focus(); }
+      if (extras.every(function(el){ return !el.hidden; })) addBtn.hidden = true;
+    });
+  }
+})();
+
+(function(){
+  var a = document.getElementById('gcal-btn');
+  if (!a) return;
+  var params = {
+    action: 'TEMPLATE',
+    text: 'גגלר 30 — Tropical Rooftop Party',
+    dates: '20260606T133000Z/20260606T200000Z',
+    details: 'מסיבת גג טרופית לחגוג 30 — דרינקים, פיצות, DJ Edry, שקיעה על הגג. קוד לבוש: טרופי/חוף. השתתפות: 100₪ (ביט/פייבוקס 054-7523288).',
+    location: 'חיים ויטאל 12, קומה 4, תל אביב',
+    ctz: 'Asia/Jerusalem'
+  };
+  var qs = Object.keys(params).map(function(k){
+    return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+  }).join('&');
+  a.href = 'https://calendar.google.com/calendar/render?' + qs;
+})();
+
+(function(){
+  var btn = document.getElementById('copy-addr');
+  var lbl = document.getElementById('copy-addr-text');
+  if (!btn || !lbl) return;
+  var addr = 'חיים ויטאל 12, קומה 4, תל אביב (פלורנטין)';
+  btn.addEventListener('click', async function(){
+    try {
+      await navigator.clipboard.writeText(addr);
+      lbl.textContent = 'הועתק! ✅';
+      if (navigator.vibrate) navigator.vibrate(20);
+      if (window.__galerMiniConfetti){
+        var rect = btn.getBoundingClientRect();
+        window.__galerMiniConfetti(rect.left + rect.width/2, rect.top + rect.height/2);
+      }
+      setTimeout(function(){ lbl.textContent = 'העתק כתובת'; }, 1800);
+    } catch(e){
+      window.prompt('העתיקו את הכתובת:', addr);
+    }
+  });
+})();
+
+(function(){
+  var canvas = document.getElementById('confetti-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var particles = [];
+  var rafId = null;
+  var animationsOn = true;
+
+  function resize(){
+    canvas.width  = window.innerWidth  * DPR;
+    canvas.height = window.innerHeight * DPR;
+    canvas.style.width  = window.innerWidth  + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var COLORS = ['#ff6f47','#ffce5c','#2fa6a3','#6fd6cf','#fff2b3','#e6492a','#6a3f6c','#ffb286'];
+  var SHAPES = ['square','circle','strip'];
+
+  function spawn(x, y, count, opts){
+    opts = opts || {};
+    var spread = opts.spread || Math.PI * 2;
+    var angleBase = opts.angle != null ? opts.angle : -Math.PI/2;
+    var velMin = opts.velMin || 4;
+    var velMax = opts.velMax || 12;
+    for (var i=0;i<count;i++){
+      var ang = angleBase + (Math.random()-0.5) * spread;
+      var v = velMin + Math.random() * (velMax - velMin);
+      particles.push({
+        x: x, y: y,
+        vx: Math.cos(ang) * v,
+        vy: Math.sin(ang) * v,
+        gravity: 0.22 + Math.random()*0.12,
+        drag: 0.985,
+        rot: Math.random() * Math.PI * 2,
+        vrot: (Math.random() - 0.5) * 0.3,
+        size: 6 + Math.random()*8,
+        color: COLORS[(Math.random()*COLORS.length)|0],
+        shape: opts.emoji ? 'emoji' : SHAPES[(Math.random()*SHAPES.length)|0],
+        emoji: opts.emoji || null,
+        emojiSize: 18 + Math.random()*12,
+        life: 0,
+        maxLife: 90 + Math.random() * 60,
+        opacity: 1
+      });
+    }
+    if (!rafId) tick();
+  }
+
+  function tick(){
+    rafId = null;
+    if (!animationsOn){ ctx.clearRect(0,0,canvas.width,canvas.height); particles.length=0; return; }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = particles.length - 1; i >= 0; i--){
+      var p = particles[i];
+      p.vx *= p.drag;
+      p.vy = p.vy * p.drag + p.gravity;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rot += p.vrot;
+      p.life++;
+      if (p.life > p.maxLife - 30){
+        p.opacity = Math.max(0, 1 - (p.life - (p.maxLife-30))/30);
+      }
+      if (p.life >= p.maxLife || p.y > window.innerHeight + 40){
+        particles.splice(i,1);
+        continue;
+      }
+      ctx.save();
+      ctx.globalAlpha = p.opacity;
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.fillStyle = p.color;
+      if (p.shape === 'circle'){
+        ctx.beginPath(); ctx.arc(0,0, p.size*0.5, 0, Math.PI*2); ctx.fill();
+      } else if (p.shape === 'strip'){
+        ctx.fillRect(-p.size*0.6, -p.size*0.18, p.size*1.2, p.size*0.36);
+      } else if (p.shape === 'emoji' && p.emoji){
+        ctx.font = p.emojiSize + 'px serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(p.emoji, 0, 0);
+      } else {
+        ctx.fillRect(-p.size*0.5, -p.size*0.5, p.size, p.size);
+      }
+      ctx.restore();
+    }
+    if (particles.length > 0){
+      rafId = requestAnimationFrame(tick);
+    }
+  }
+
+  window.__galerConfetti = function(count){
+    if (!animationsOn) return;
+    count = count || 80;
+    var w = window.innerWidth, h = window.innerHeight;
+    spawn(w*0.15, h*0.95, Math.floor(count/2), { angle: -Math.PI/2 - Math.PI/8, spread: Math.PI/3, velMin: 12, velMax: 22 });
+    spawn(w*0.85, h*0.95, Math.floor(count/2), { angle: -Math.PI/2 + Math.PI/8, spread: Math.PI/3, velMin: 12, velMax: 22 });
+    spawn(w*0.5, -10, Math.floor(count/3), { angle: Math.PI/2, spread: Math.PI, velMin: 2, velMax: 6 });
+  };
+
+  window.__galerMiniConfetti = function(x, y, emoji){
+    if (!animationsOn) return;
+    spawn(x, y, emoji ? 10 : 14, { angle: -Math.PI/2, spread: Math.PI*1.4, velMin: 3, velMax: 8, emoji: emoji || null });
+  };
+
+  window.__galerSetAnimations = function(on){
+    animationsOn = !!on;
+    if (!on){
+      particles.length = 0;
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      document.body.classList.add('no-anim');
+    } else {
+      document.body.classList.remove('no-anim');
+    }
+  };
+
+  function init(){
+    document.querySelectorAll('[data-confetti]').forEach(function(el){
+      el.addEventListener('click', function(){
+        window.__galerConfetti(70);
+      });
+    });
+  }
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+
+(function(){
+  var overlay = document.getElementById('easter');
+  var closeBtn = document.getElementById('easter-close');
+  if (!overlay || !closeBtn) return;
+
+  function show(){
+    overlay.classList.add('show');
+    if (window.__galerConfetti){
+      window.__galerConfetti(120);
+      setTimeout(function(){ window.__galerConfetti(80); }, 600);
+      setTimeout(function(){ window.__galerConfetti(80); }, 1200);
+    }
+  }
+  function hide(){ overlay.classList.remove('show'); }
+
+  closeBtn.addEventListener('click', hide);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) hide(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay.classList.contains('show')) hide();
+  });
+
+  window.__galerEasterEgg = show;
+
+  var datePill = document.querySelector('.hero__date');
+  if (datePill){
+    var clicks = 0, t;
+    datePill.addEventListener('click', function(){
+      clicks++; clearTimeout(t);
+      t = setTimeout(function(){ clicks = 0; }, 700);
+      if (clicks >= 3){ clicks = 0; show(); }
+    });
+  }
+})();
+
+(function(){
+  var el = document.getElementById('weather-display');
+  if (!el) return;
+  var wrap = el.closest('.detail');
+  var EVENT_UTC = Date.UTC(2026, 5, 6, 13, 30, 0);
+  var WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+  var now = Date.now();
+  var fallback = '☀️ ביוני בת״א בד״כ 24-28°, שמש מלאה';
+  // After event ends — hide entirely
+  if (now > EVENT_UTC + 6 * 60 * 60 * 1000){
+    if (wrap) wrap.style.display = 'none';
+    return;
+  }
+  // More than 7 days out — show climate average + "will update closer to event"
+  if (now < EVENT_UTC - WEEK_MS){
+    el.innerHTML = fallback + ' <small style="display:block;margin-top:4px;opacity:.75;font-weight:500;">תחזית מדויקת תתעדכן 7 ימים לפני האירוע</small>';
+    return;
+  }
+  // Within 7 days — fetch real forecast
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=32.0556&longitude=34.7706&daily=weather_code,temperature_2m_max,temperature_2m_min&start_date=2026-06-06&end_date=2026-06-06&timezone=Asia%2FJerusalem')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d && d.daily && d.daily.temperature_2m_max && d.daily.temperature_2m_max[0] != null) {
+        var tmax = Math.round(d.daily.temperature_2m_max[0]);
+        var tmin = Math.round(d.daily.temperature_2m_min[0]);
+        var code = d.daily.weather_code[0];
+        var emoji = code <= 1 ? '☀️' : code <= 3 ? '⛅' : code <= 48 ? '☁️' : '🌧️';
+        el.textContent = emoji + ' תחזית ל-06.06: ' + tmin + '°-' + tmax + '°';
+      } else {
+        el.textContent = fallback;
+      }
+    })
+    .catch(function(){ el.textContent = fallback; });
+})();
+
+(function(){
+  var btn = document.getElementById('wa-share-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    var url = window.location.origin + window.location.pathname;
+    if (!url.endsWith('/')) url += '/';
+    var msg = '🍹 מוזמנים לגגלר 30 — Tropical Rooftop Party 🌴\n06.06.26 · 16:30 · פלורנטין\n\n' + url;
+    var waUrl = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    window.open(waUrl, '_blank', 'noopener');
+    if (window.__galerMiniConfetti){
+      var rect = btn.getBoundingClientRect();
+      window.__galerMiniConfetti(rect.left + rect.width/2, rect.top + rect.height/2);
+    }
+  });
+})();
+
+/* ===== First visit: confetti welcome (once per user) ===== */
+(function(){
+  try {
+    if (localStorage.getItem('galer-visited')) return;
+    localStorage.setItem('galer-visited', '1');
+  } catch(e){}
+  setTimeout(function(){
+    if (window.__galerConfetti) window.__galerConfetti(100);
+    if (navigator.vibrate) navigator.vibrate([15, 40, 15]);
+  }, 700);
+})();
+
+/* ===== DJ Edry SoundCloud banner ===== */
+(function(){
+  var banner = document.getElementById('dj-banner');
+  var iframe = document.getElementById('dj-iframe');
+  var closeBtn = document.getElementById('dj-close');
+  if (!banner || !iframe) return;
+
+  // Honor user's prior choice
+  try {
+    if (localStorage.getItem('galer-dj-closed') === '1'){
+      banner.classList.add('is-hidden');
+      return;
+    }
+  } catch(e){}
+
+  // Try to trigger play via Widget API once user clicks anywhere on the page
+  // (browsers block autoplay until first user gesture)
+  function loadAPI(cb){
+    if (window.SC && window.SC.Widget) return cb();
+    var s = document.createElement('script');
+    s.src = 'https://w.soundcloud.com/player/api.js';
+    s.onload = cb;
+    s.onerror = function(){};
+    document.head.appendChild(s);
+  }
+
+  loadAPI(function(){
+    try {
+      var widget = window.SC.Widget(iframe);
+      var triggered = false;
+      function kick(){
+        if (triggered) return;
+        triggered = true;
+        try { widget.play(); } catch(e){}
+        ['click','touchstart','touchend','pointerdown','keydown','scroll','mousemove','wheel'].forEach(function(ev){
+          document.removeEventListener(ev, kick, true);
+          window.removeEventListener(ev, kick, true);
+        });
+      }
+      ['click','touchstart','touchend','pointerdown','keydown','scroll','mousemove','wheel'].forEach(function(ev){
+        document.addEventListener(ev, kick, true);
+        window.addEventListener(ev, kick, true);
+      });
+      // Also try immediate play on READY (works on some browsers / returning visitors with media engagement)
+      widget.bind && widget.bind(window.SC.Widget.Events.READY, function(){
+        try { widget.seekTo(18 * 60 * 1000 + 30 * 1000); } catch(e){}
+        try { widget.play(); } catch(e){}
+      });
+      var seeked = false;
+      widget.bind && widget.bind(window.SC.Widget.Events.PLAY, function(){
+        if (seeked) return;
+        seeked = true;
+        try { widget.seekTo(18 * 60 * 1000 + 30 * 1000); } catch(e){}
+      });
+      widget.bind && widget.bind(window.SC.Widget.Events.FINISH, function(){
+        try { widget.seekTo(18 * 60 * 1000 + 30 * 1000); widget.play(); } catch(e){}
+      });
+    } catch(e){}
+  });
+
+  closeBtn && closeBtn.addEventListener('click', function(){
+    banner.classList.add('is-hidden');
+    try { localStorage.setItem('galer-dj-closed', '1'); } catch(e){}
+  });
+})();
+
+/* ===== Auto night mode after 19:00 ===== */
+(function(){
+  function applyTheme(){
+    var hour = new Date().getHours();
+    var isNight = hour >= 19 || hour < 6;
+    document.body.classList.toggle('night-mode', isNight);
+    document.documentElement.classList.toggle('night-mode', isNight);
+  }
+  applyTheme();
+  // Re-check every 5 minutes for users who keep the page open
+  setInterval(applyTheme, 5 * 60 * 1000);
+})();
+</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
