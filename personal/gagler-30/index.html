@@ -79,7 +79,7 @@ body::before{
 .page{
   max-width:var(--maxw);
   margin:0 auto;
-  padding:18px 18px 140px;
+  padding:18px 18px 200px;
   position:relative;
 }
 
@@ -564,45 +564,28 @@ body.night-mode .deco{ opacity:.4; }
 
 <!-- ===== DJ Edry autoplay banner ===== -->
 <div id="dj-banner" class="dj-banner" role="region" aria-label="DJ Edry — Afro House">
-  <div class="dj-banner__inner">
-    <div class="dj-banner__art" aria-hidden="true">
-      <div class="dj-banner__disc">
-        <span class="dj-banner__note">🎧</span>
-      </div>
-      <span class="dj-banner__eq" aria-hidden="true">
-        <i></i><i></i><i></i><i></i>
-      </span>
+  <div class="dj-banner__head">
+    <div class="dj-banner__title">
+      <span class="dj-banner__pulse" aria-hidden="true"></span>
+      🎧 DJ Ohad Edry · My Afro House 2
     </div>
-    <div class="dj-banner__meta">
-      <div class="dj-banner__title">DJ Ohad Edry</div>
-      <div class="dj-banner__sub">My Afro House 2 · טעימה מהמסיבה</div>
-    </div>
-    <button class="dj-banner__btn" id="dj-toggle" type="button" aria-label="הפעל / השתק">
-      <svg class="dj-banner__icon dj-banner__icon--muted" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M5 9v6h4l5 4V5L9 9H5z" fill="currentColor"/>
-        <path d="M16 8l5 8M21 8l-5 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-      </svg>
-      <svg class="dj-banner__icon dj-banner__icon--playing" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M5 9v6h4l5 4V5L9 9H5z" fill="currentColor"/>
-        <path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-      </svg>
-      <span class="dj-banner__label" id="dj-toggle-label">הקש להפעלת קול 🔊</span>
-    </button>
     <button class="dj-banner__close" id="dj-close" type="button" aria-label="סגור">×</button>
   </div>
-  <iframe id="dj-iframe"
-          allow="autoplay"
-          scrolling="no" frameborder="no"
-          src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fohad-edry%2Fdj-ohad-edry-my-afro-house-2&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false&buying=false&sharing=false&download=false&single_active=false"></iframe>
+  <div class="dj-banner__player">
+    <iframe id="dj-iframe"
+            allow="autoplay"
+            scrolling="no" frameborder="no"
+            src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fohad-edry%2Fdj-ohad-edry-my-afro-house-2%23t%3D18%3A30&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false&buying=false&sharing=false&download=false&color=%23ff6f47"></iframe>
+  </div>
 </div>
 
 <style>
 .dj-banner{
-  position:fixed; left:50%; bottom:14px; transform:translateX(-50%);
+  position:fixed; left:50%; bottom:12px; transform:translateX(-50%);
   z-index: 9990;
-  width: min(560px, calc(100vw - 24px));
-  border-radius: 999px;
-  background: linear-gradient(135deg, #25151f 0%, #3a1f3f 45%, #c8506b 100%);
+  width: min(560px, calc(100vw - 20px));
+  border-radius: 18px;
+  background: linear-gradient(135deg, #25151f 0%, #3a1f3f 50%, #c8506b 100%);
   box-shadow: 0 20px 50px rgba(20,8,28,.55), 0 0 0 1px rgba(255,255,255,.08) inset;
   color:#fff;
   overflow: hidden;
@@ -614,106 +597,47 @@ body.night-mode .deco{ opacity:.4; }
   from{ transform: translate(-50%, 120%); opacity:0; }
   to  { transform: translate(-50%, 0);    opacity:1; }
 }
-.dj-banner__inner{
-  display:flex; align-items:center; gap:10px;
-  padding: 8px 8px 8px 14px;
-  position:relative;
-}
-.dj-banner__art{
-  position:relative;
-  width:46px; height:46px; flex:0 0 auto;
-}
-.dj-banner__disc{
-  width:46px; height:46px; border-radius:50%;
-  background:
-    radial-gradient(circle at 50% 50%, #ffce5c 0 8px, #25151f 9px 11px, #3a1f3f 12px 100%);
-  display:grid; place-items:center;
-  box-shadow: 0 4px 14px rgba(0,0,0,.4), 0 0 0 2px rgba(255,255,255,.08) inset;
-  animation: djSpin 4s linear infinite;
-  animation-play-state: paused;
-}
-.dj-banner.is-playing .dj-banner__disc{ animation-play-state: running; }
-.dj-banner__note{ font-size:18px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.5)); }
-@keyframes djSpin{ to{ transform: rotate(360deg); } }
-.dj-banner__eq{
-  position:absolute; inset:auto -2px -2px auto;
-  width:18px; height:14px; display:none;
-  align-items:flex-end; justify-content:space-between;
-  background: #25151f; border-radius: 6px; padding:2px;
-  box-shadow: 0 0 0 2px #c8506b;
-}
-.dj-banner.is-playing .dj-banner__eq{ display:flex; }
-.dj-banner__eq i{
-  display:block; width:2px; background: #ffce5c; border-radius:1px;
-  animation: djEq 1s ease-in-out infinite;
-}
-.dj-banner__eq i:nth-child(1){ animation-delay: 0s;   height:60%; }
-.dj-banner__eq i:nth-child(2){ animation-delay: .15s; height:90%; }
-.dj-banner__eq i:nth-child(3){ animation-delay: .3s;  height:50%; }
-.dj-banner__eq i:nth-child(4){ animation-delay: .45s; height:80%; }
-@keyframes djEq{
-  0%,100%{ transform: scaleY(.4); }
-  50%    { transform: scaleY(1);  }
-}
-.dj-banner__meta{
-  flex:1 1 auto; min-width:0;
-  display:flex; flex-direction:column; gap:1px;
+.dj-banner__head{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:8px; padding: 8px 10px 6px 14px;
 }
 .dj-banner__title{
-  font-family:"Heebo", sans-serif; font-weight:900; font-size:14px;
-  letter-spacing:.2px; line-height:1.15;
+  font-family:"Heebo", sans-serif; font-weight:800; font-size:13px;
+  letter-spacing:.2px;
+  display:flex; align-items:center; gap:8px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
-.dj-banner__sub{
-  font-size: 11.5px; opacity:.78; font-weight:500;
-  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+.dj-banner__pulse{
+  width:8px; height:8px; border-radius:50%;
+  background: #ffce5c;
+  box-shadow: 0 0 0 0 rgba(255,206,92,.7);
+  animation: djPulseDot 1.6s ease-out infinite;
+  flex:0 0 auto;
 }
-.dj-banner__btn{
-  display:inline-flex; align-items:center; gap:7px;
-  padding: 9px 14px;
-  border-radius: 999px; border:0; cursor:pointer;
-  background: linear-gradient(135deg, #ffce5c 0%, #ff6f47 100%);
-  color:#25151f; font-family:"Heebo", sans-serif; font-weight:800; font-size:13px;
-  box-shadow: 0 6px 14px rgba(255,111,71,.35);
-  white-space:nowrap;
-  transition: transform .15s ease, filter .15s ease;
-  position:relative;
+@keyframes djPulseDot{
+  0%   { box-shadow: 0 0 0 0 rgba(255,206,92,.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(255,206,92,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,206,92,0); }
 }
-.dj-banner__btn:hover{ filter: brightness(1.05); }
-.dj-banner__btn:active{ transform: scale(.96); }
-.dj-banner__btn::before{
-  content:""; position:absolute; inset:-4px; border-radius:999px;
-  border:2px solid rgba(255,206,92,.55);
-  animation: djPulse 1.8s ease-in-out infinite;
-  pointer-events:none;
-}
-.dj-banner.is-playing .dj-banner__btn::before{ display:none; }
-@keyframes djPulse{
-  0%   { transform: scale(.95); opacity:.9; }
-  70%  { transform: scale(1.15); opacity:0; }
-  100% { transform: scale(1.15); opacity:0; }
-}
-.dj-banner__icon{ width:16px; height:16px; }
-.dj-banner__icon--playing{ display:none; }
-.dj-banner.is-playing .dj-banner__icon--muted{ display:none; }
-.dj-banner.is-playing .dj-banner__icon--playing{ display:inline-block; }
 .dj-banner__close{
-  width:28px; height:28px; flex:0 0 auto;
+  width:26px; height:26px; flex:0 0 auto;
   border-radius:50%; border:0; cursor:pointer;
-  background: rgba(255,255,255,.12); color:#fff;
+  background: rgba(255,255,255,.14); color:#fff;
   font-size:18px; line-height:1; font-weight:600;
   display:grid; place-items:center;
   transition: background .15s ease;
 }
-.dj-banner__close:hover{ background: rgba(255,255,255,.22); }
-#dj-iframe{
-  position:absolute; width:1px; height:1px; opacity:0; pointer-events:none;
-  border:0; left:-9999px; top:-9999px;
+.dj-banner__close:hover{ background: rgba(255,255,255,.26); }
+.dj-banner__player{
+  padding: 0 8px 8px;
+}
+.dj-banner__player iframe{
+  display:block; width:100%; height:120px;
+  border:0; border-radius: 12px;
+  background:#25151f;
 }
 @media (max-width: 380px){
-  .dj-banner__sub{ display:none; }
-  .dj-banner__btn{ padding: 9px 11px; font-size:12px; }
-  .dj-banner__title{ font-size:13px; }
+  .dj-banner__title{ font-size:12px; }
 }
 </style>
 
@@ -734,7 +658,7 @@ body.night-mode .deco{ opacity:.4; }
   </section>
 
   <header class="title-block">
-    <span class="eyebrow">You're invited 🍹</span>
+    <span class="eyebrow">!You're invited 🍹</span>
   </header>
 
   <section class="card intro card--tappable" aria-label="פתיח">
@@ -1184,13 +1108,13 @@ function renderSongsList(data){
       } catch(err){ console.warn('Songs submit failed:', err); }
     }
 
-    var msg = 'מאשר/ת הגעה ל-גגלר 30!\n\n' +
-              'שם: ' + name + '\n' +
-              'טלפון: ' + phone;
+    var msg = '🌴 מאשר/ת הגעה לגגלר 30!\n\n' +
+              '👤 שם: ' + name + '\n' +
+              '📱 טלפון: ' + phone;
     if (songs.length){
-      msg += '\n\nשירים שאני רוצה לשמוע:\n' + songs.map(function(s){ return '- ' + s; }).join('\n');
+      msg += '\n\n🎵 שירים שאני אשמח לשמוע:\n' + songs.map(function(s){ return '• ' + s; }).join('\n');
     }
-    msg += '\n\nנתראה על הגג!';
+    msg += '\n\n🍹 נתראה על הגג!';
 
     var url = 'https://wa.me/972547523288?text=' + encodeURIComponent(msg);
     window.open(url, '_blank', 'noopener');
@@ -1478,14 +1402,12 @@ function renderSongsList(data){
   }, 700);
 })();
 
-/* ===== DJ Edry SoundCloud autoplay banner ===== */
+/* ===== DJ Edry SoundCloud banner ===== */
 (function(){
   var banner = document.getElementById('dj-banner');
   var iframe = document.getElementById('dj-iframe');
-  var btn    = document.getElementById('dj-toggle');
-  var label  = document.getElementById('dj-toggle-label');
   var closeBtn = document.getElementById('dj-close');
-  if (!banner || !iframe || !btn) return;
+  if (!banner || !iframe) return;
 
   // Honor user's prior choice
   try {
@@ -1495,76 +1417,52 @@ function renderSongsList(data){
     }
   } catch(e){}
 
-  var widget = null;
-  var isPlaying = false;
-  var hasUnmuted = false;
-
+  // Try to trigger play via Widget API once user clicks anywhere on the page
+  // (browsers block autoplay until first user gesture)
   function loadAPI(cb){
     if (window.SC && window.SC.Widget) return cb();
     var s = document.createElement('script');
     s.src = 'https://w.soundcloud.com/player/api.js';
     s.onload = cb;
-    s.onerror = function(){ /* fallback: just hide */ banner.classList.add('is-hidden'); };
+    s.onerror = function(){};
     document.head.appendChild(s);
   }
 
-  function setUI(playing){
-    isPlaying = playing;
-    banner.classList.toggle('is-playing', playing);
-    if (playing){
-      label.textContent = hasUnmuted ? '🎶 מתנגן עכשיו' : 'הקש להפעלת קול 🔊';
-    } else {
-      label.textContent = 'הקש להפעלה ▶';
-    }
-  }
-
   loadAPI(function(){
-    widget = window.SC.Widget(iframe);
-    widget.bind(window.SC.Widget.Events.READY, function(){
-      // Try unmuted autoplay first; if blocked, start muted (which usually works)
-      widget.setVolume(0);
-      widget.play();
-      setUI(false);
-
-      // Try a "loud" play after a short delay — works if user has interacted with site
-      setTimeout(function(){
-        widget.isPaused(function(paused){
-          if (!paused){
-            // it's playing (silently). Wait for tap to unmute.
-          }
+    try {
+      var widget = window.SC.Widget(iframe);
+      var triggered = false;
+      function kick(){
+        if (triggered) return;
+        triggered = true;
+        try { widget.play(); } catch(e){}
+        ['click','touchstart','touchend','pointerdown','keydown','scroll','mousemove','wheel'].forEach(function(ev){
+          document.removeEventListener(ev, kick, true);
+          window.removeEventListener(ev, kick, true);
         });
-      }, 400);
-    });
-    widget.bind(window.SC.Widget.Events.PLAY,  function(){ setUI(true); });
-    widget.bind(window.SC.Widget.Events.PAUSE, function(){ setUI(false); });
-    widget.bind(window.SC.Widget.Events.FINISH, function(){
-      // loop
-      widget.seekTo(0); widget.play();
-    });
-  });
-
-  btn.addEventListener('click', function(){
-    if (!widget) return;
-    if (!hasUnmuted){
-      hasUnmuted = true;
-      widget.setVolume(80);
-      widget.play();
-      label.textContent = '🎶 מתנגן עכשיו';
-      if (window.__galerMiniConfetti){
-        var rect = btn.getBoundingClientRect();
-        window.__galerMiniConfetti(rect.left + rect.width/2, rect.top + rect.height/2, '🎵');
       }
-      if (navigator.vibrate) navigator.vibrate(20);
-      return;
-    }
-    widget.isPaused(function(paused){
-      if (paused){ widget.play(); }
-      else { widget.pause(); }
-    });
+      ['click','touchstart','touchend','pointerdown','keydown','scroll','mousemove','wheel'].forEach(function(ev){
+        document.addEventListener(ev, kick, true);
+        window.addEventListener(ev, kick, true);
+      });
+      // Also try immediate play on READY (works on some browsers / returning visitors with media engagement)
+      widget.bind && widget.bind(window.SC.Widget.Events.READY, function(){
+        try { widget.seekTo(18 * 60 * 1000 + 30 * 1000); } catch(e){}
+        try { widget.play(); } catch(e){}
+      });
+      var seeked = false;
+      widget.bind && widget.bind(window.SC.Widget.Events.PLAY, function(){
+        if (seeked) return;
+        seeked = true;
+        try { widget.seekTo(18 * 60 * 1000 + 30 * 1000); } catch(e){}
+      });
+      widget.bind && widget.bind(window.SC.Widget.Events.FINISH, function(){
+        try { widget.seekTo(18 * 60 * 1000 + 30 * 1000); widget.play(); } catch(e){}
+      });
+    } catch(e){}
   });
 
-  closeBtn.addEventListener('click', function(){
-    if (widget) widget.pause();
+  closeBtn && closeBtn.addEventListener('click', function(){
     banner.classList.add('is-hidden');
     try { localStorage.setItem('galer-dj-closed', '1'); } catch(e){}
   });
