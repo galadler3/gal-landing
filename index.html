@@ -1436,6 +1436,11 @@ function renderSongsList(data){
   loadAPI(function(){
     try {
       var widget = window.SC.Widget(iframe);
+      var START_MS = 18 * 60 * 1000 + 30 * 1000; // 18:30
+      var atTarget = false;
+      function enforceSeek(){
+        try { widget.seekTo(START_MS); } catch(e){}
+      }
       var triggered = false;
       function kick(){
         if (triggered) return;
@@ -1452,17 +1457,29 @@ function renderSongsList(data){
       });
       // Also try immediate play on READY (works on some browsers / returning visitors with media engagement)
       widget.bind && widget.bind(window.SC.Widget.Events.READY, function(){
-        try { widget.seekTo(18 * 60 * 1000 + 30 * 1000); } catch(e){}
+        enforceSeek();
         try { widget.play(); } catch(e){}
       });
-      var seeked = false;
       widget.bind && widget.bind(window.SC.Widget.Events.PLAY, function(){
-        if (seeked) return;
-        seeked = true;
-        try { widget.seekTo(18 * 60 * 1000 + 30 * 1000); } catch(e){}
+        if (!atTarget) enforceSeek();
+      });
+      // PLAY_PROGRESS fires ~every 250ms once audio is actually playing.
+      // Keep re-seeking until we're at/past 18:30 — this fixes cases where
+      // an early seekTo is dropped because the track hadn't fully primed yet.
+      widget.bind && widget.bind(window.SC.Widget.Events.PLAY_PROGRESS, function(data){
+        if (atTarget) return;
+        if (data && typeof data.currentPosition === 'number'){
+          if (data.currentPosition >= START_MS - 500){
+            atTarget = true;
+          } else {
+            enforceSeek();
+          }
+        }
       });
       widget.bind && widget.bind(window.SC.Widget.Events.FINISH, function(){
-        try { widget.seekTo(18 * 60 * 1000 + 30 * 1000); widget.play(); } catch(e){}
+        atTarget = false;
+        enforceSeek();
+        try { widget.play(); } catch(e){}
       });
     } catch(e){}
   });
