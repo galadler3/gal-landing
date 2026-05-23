@@ -1445,6 +1445,8 @@ function renderSongsList(data){
       function kick(){
         if (triggered) return;
         triggered = true;
+        // Seek inside the user-gesture handler so iOS/Safari honor it
+        enforceSeek();
         try { widget.play(); } catch(e){}
         ['click','touchstart','touchend','pointerdown','keydown','scroll','mousemove','wheel'].forEach(function(ev){
           document.removeEventListener(ev, kick, true);
@@ -1459,13 +1461,28 @@ function renderSongsList(data){
       widget.bind && widget.bind(window.SC.Widget.Events.READY, function(){
         enforceSeek();
         try { widget.play(); } catch(e){}
+        // Aggressive poll: getPosition + re-seek every 500ms until we're at 18:30
+        var attempts = 0;
+        var pollId = setInterval(function(){
+          attempts++;
+          if (atTarget || attempts > 30){ clearInterval(pollId); return; }
+          try {
+            widget.getPosition(function(pos){
+              if (typeof pos !== 'number') return;
+              if (pos >= START_MS - 500){
+                atTarget = true;
+                clearInterval(pollId);
+              } else {
+                enforceSeek();
+              }
+            });
+          } catch(e){}
+        }, 500);
       });
       widget.bind && widget.bind(window.SC.Widget.Events.PLAY, function(){
         if (!atTarget) enforceSeek();
       });
       // PLAY_PROGRESS fires ~every 250ms once audio is actually playing.
-      // Keep re-seeking until we're at/past 18:30 — this fixes cases where
-      // an early seekTo is dropped because the track hadn't fully primed yet.
       widget.bind && widget.bind(window.SC.Widget.Events.PLAY_PROGRESS, function(data){
         if (atTarget) return;
         if (data && typeof data.currentPosition === 'number'){
