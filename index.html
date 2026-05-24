@@ -567,7 +567,7 @@ body.night-mode .deco{ opacity:.4; }
   <div class="dj-banner__head">
     <div class="dj-banner__title">
       <span class="dj-banner__pulse" aria-hidden="true"></span>
-      🎧 DJ Ohad Edry · My Afro House 2
+      🎧 DJ Ohad Edry · My Afro House
     </div>
     <button class="dj-banner__close" id="dj-close" type="button" aria-label="סגור">×</button>
   </div>
@@ -575,7 +575,7 @@ body.night-mode .deco{ opacity:.4; }
     <iframe id="dj-iframe"
             allow="autoplay"
             scrolling="no" frameborder="no"
-            src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fohad-edry%2Fdj-ohad-edry-my-afro-house-2&auto_play=false&start_track=0&single_active=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false&buying=false&sharing=false&download=false&color=%23ff6f47"></iframe>
+            src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fohad-edry%2Fdj-ohad-edry-my-afro-house&auto_play=true&start_track=0&single_active=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false&buying=false&sharing=false&download=false&color=%23ff6f47"></iframe>
   </div>
 </div>
 
@@ -1436,16 +1436,6 @@ function renderSongsList(data){
   loadAPI(function(){
     try {
       var widget = window.SC.Widget(iframe);
-      var TRACK_URL = 'https://soundcloud.com/ohad-edry/dj-ohad-edry-my-afro-house-2';
-      var START_MS = 18 * 60 * 1000 + 30 * 1000; // 18:30
-
-      widget.bind && widget.bind(window.SC.Widget.Events.READY, function(){
-        widget.load(TRACK_URL, {
-          auto_play: false,
-          start_position: START_MS,
-          callback: function(){}
-        });
-      });
 
       var triggered = false;
       function kick(){
@@ -1462,8 +1452,12 @@ function renderSongsList(data){
         window.addEventListener(ev, kick, true);
       });
 
+      widget.bind && widget.bind(window.SC.Widget.Events.READY, function(){
+        try { widget.play(); } catch(e){}
+      });
+
       widget.bind && widget.bind(window.SC.Widget.Events.FINISH, function(){
-        widget.load(TRACK_URL, { auto_play: true, start_position: START_MS });
+        try { widget.seekTo(0); widget.play(); } catch(e){}
       });
     } catch(e){}
   });
