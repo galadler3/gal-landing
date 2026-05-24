@@ -567,7 +567,7 @@ body.night-mode .deco{ opacity:.4; }
   <div class="dj-banner__head">
     <div class="dj-banner__title">
       <span class="dj-banner__pulse" aria-hidden="true"></span>
-      🎧 DJ Ohad Edry · My Afro House 2
+      🎧 DJ Ohad Edry · My Afro House
     </div>
     <button class="dj-banner__close" id="dj-close" type="button" aria-label="סגור">×</button>
   </div>
@@ -575,7 +575,7 @@ body.night-mode .deco{ opacity:.4; }
     <iframe id="dj-iframe"
             allow="autoplay"
             scrolling="no" frameborder="no"
-            src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fohad-edry%2Fdj-ohad-edry-my-afro-house-2&auto_play=true&start_track=0&single_active=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false&buying=false&sharing=false&download=false&color=%23ff6f47"></iframe>
+            src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fohad-edry%2Fdj-ohad-edry-my-afro-house&auto_play=true&start_track=0&single_active=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false&buying=false&sharing=false&download=false&color=%23ff6f47"></iframe>
   </div>
 </div>
 
@@ -668,6 +668,9 @@ body.night-mode .deco{ opacity:.4; }
     </p>
     <p>
       מסיבה טרופית קלילה, שמחה ומיוחדת — לחגוג כמו שצריך את גיל <strong>30</strong>.
+    </p>
+    <p style="font-weight:500; opacity:.85;">
+      מסיבה לחברים וחברים של חברים בלבד.
     </p>
     <div class="quote">
       רוב הדברים שהשגתי הגיעו בעמל רב, אבל יש משהו אחד שקיבלתי בלי להתאמץ — <strong>תאריך לידה יפה</strong>. ופעם בעשור הוא עוד יותר מגניב… <span class="kicker big-date">06.06.26</span>
@@ -1436,11 +1439,7 @@ function renderSongsList(data){
   loadAPI(function(){
     try {
       var widget = window.SC.Widget(iframe);
-      var START_MS = 18 * 60 * 1000 + 30 * 1000; // 18:30
-      var atTarget = false;
-      function enforceSeek(){
-        try { widget.seekTo(START_MS); } catch(e){}
-      }
+
       var triggered = false;
       function kick(){
         if (triggered) return;
@@ -1455,31 +1454,13 @@ function renderSongsList(data){
         document.addEventListener(ev, kick, true);
         window.addEventListener(ev, kick, true);
       });
-      // Also try immediate play on READY (works on some browsers / returning visitors with media engagement)
+
       widget.bind && widget.bind(window.SC.Widget.Events.READY, function(){
-        enforceSeek();
         try { widget.play(); } catch(e){}
       });
-      widget.bind && widget.bind(window.SC.Widget.Events.PLAY, function(){
-        if (!atTarget) enforceSeek();
-      });
-      // PLAY_PROGRESS fires ~every 250ms once audio is actually playing.
-      // Keep re-seeking until we're at/past 18:30 — this fixes cases where
-      // an early seekTo is dropped because the track hadn't fully primed yet.
-      widget.bind && widget.bind(window.SC.Widget.Events.PLAY_PROGRESS, function(data){
-        if (atTarget) return;
-        if (data && typeof data.currentPosition === 'number'){
-          if (data.currentPosition >= START_MS - 500){
-            atTarget = true;
-          } else {
-            enforceSeek();
-          }
-        }
-      });
+
       widget.bind && widget.bind(window.SC.Widget.Events.FINISH, function(){
-        atTarget = false;
-        enforceSeek();
-        try { widget.play(); } catch(e){}
+        try { widget.seekTo(0); widget.play(); } catch(e){}
       });
     } catch(e){}
   });
