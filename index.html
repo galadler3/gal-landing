@@ -6,11 +6,11 @@
 <meta name="theme-color" content="#ffd6a8" />
 <title>גגלר 30 — Tropical Rooftop Party</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌴%3C/text%3E%3C/svg%3E" />
-<meta name="description" content="גגלר 30 — מסיבת גג טרופית בתל אביב. 06.06.26, 16:30. חיים ויטאל 12, פלורנטין." />
+<meta name="description" content="גגלר 30 — מסיבת גג טרופית בתל אביב. 06.06.26, 16:30. מתחם O2O YOURSHOP, תל אביב." />
 
 <!-- Open Graph -->
 <meta property="og:title" content="גגלר 30 — Tropical Rooftop Party" />
-<meta property="og:description" content="06.06.26 · 16:30 · חיים ויטאל 12, ת״א — לחגוג את גיל 30 על הגג." />
+<meta property="og:description" content="06.06.26 · 16:30 · O2O YOURSHOP, ת״א — לחגוג את גיל 30 על הגג." />
 <meta property="og:image" content="גגלר 30.jpg" />
 <meta property="og:type" content="website" />
 
@@ -694,7 +694,7 @@ body.night-mode .deco{ opacity:.4; }
       <div class="detail detail--compact">
         <div class="ico" aria-hidden="true">📍</div>
         <div class="label">איפה זה קורה</div>
-        <div class="value">חיים ויטאל 12 <small>קומה 4, פלורנטין, תל אביב</small></div>
+        <div class="value">מתחם O2O YOURSHOP <small>רחוב 3320, 101 · מאחורי התחייה 16, תל אביב</small></div>
       </div>
       <div class="detail detail--compact">
         <div class="ico" aria-hidden="true">💸</div>
@@ -704,22 +704,13 @@ body.night-mode .deco{ opacity:.4; }
       <div class="detail detail--wide" style="text-align:center; padding:12px;">
         <div id="weather-display" class="weather-pill">⏳ טוען תחזית...</div>
       </div>
-      <div class="detail map-wrap-detail" style="grid-column: span 7;">
-        <iframe src="https://maps.google.com/maps?q=%D7%97%D7%99%D7%99%D7%9D+%D7%95%D7%99%D7%98%D7%90%D7%9C+12+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91&output=embed&hl=he" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="חיים ויטאל 12, תל אביב"></iframe>
-      </div>
-      <div class="detail" style="grid-column: span 3; padding:14px 12px;">
-        <div class="ico" aria-hidden="true">🅿️</div>
-        <div class="label">חניה מומלצת</div>
-        <div class="value" style="font-size:14px;">חניון ליבר <small>אחוזת החוף
-9 דקות הליכה</small></div>
+      <div class="detail map-wrap-detail" style="grid-column: 1 / -1;">
+        <iframe src="https://maps.google.com/maps?q=O2O+YOURSHOP+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91&output=embed&hl=he" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="מתחם O2O YOURSHOP, תל אביב"></iframe>
       </div>
       <div class="detail detail--wide" style="padding:12px;">
-        <div class="cta-row" style="margin:0;">
-          <a class="btn btn--waze" href="https://waze.com/ul?q=%D7%97%D7%99%D7%99%D7%9D%20%D7%95%D7%99%D7%98%D7%90%D7%9C%2012%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&navigate=yes" target="_blank" rel="noopener">
+        <div class="cta-row" style="margin:0; grid-template-columns:1fr;">
+          <a class="btn btn--waze" href="https://waze.com/ul?q=O2O%20YOURSHOP%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&navigate=yes" target="_blank" rel="noopener">
             <span class="em">🚗</span> ניווט לאירוע
-          </a>
-          <a class="btn btn--waze" href="https://waze.com/ul?q=%D7%97%D7%A0%D7%99%D7%95%D7%9F%20%D7%9C%D7%99%D7%91%D7%A8%20%D7%90%D7%97%D7%95%D7%96%D7%AA%20%D7%94%D7%97%D7%95%D7%A3%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&navigate=yes" target="_blank" rel="noopener">
-            <span class="em">🅿️</span> ניווט לחניון
           </a>
         </div>
       </div>
@@ -822,15 +813,21 @@ var PAYBOX_URL = "https://links.payboxapp.com/A8omjobsw2b";
 var SONGS_URL = "https://script.google.com/macros/s/AKfycbzjPZs0x9dH-Xe-R_t6iLxlhG1h6Dv53WQbpAOVn0cO8zQW0i7n7gZNUVBc2Q4zr8ClxA/exec";
 var SONGS_DEADLINE = new Date('2026-06-05T23:59:59+03:00').getTime();
 
-/* Canonicalize a song title so identical requests aggregate together server-side:
-   unify curly quotes/apostrophes, collapse whitespace, normalize Unicode (NFC). */
+/* Canonicalize a song title so identical requests aggregate together server-side
+   and render uniformly: unify curly quotes/apostrophes, collapse whitespace,
+   normalize Unicode (NFC), and Title-Case each word for a consistent look. */
 function normalizeSong(s){
   return String(s || '')
     .normalize('NFC')
     .replace(/[‘’ʼ′]/g, "'")   // curly/modifier apostrophes -> '
     .replace(/[“”″]/g, '"')          // curly double quotes -> "
     .replace(/\s+/g, ' ')                            // collapse internal whitespace
-    .trim();
+    .trim()
+    // Title-Case each word for a uniform look: uppercase only the first Latin
+    // letter of each word, so acronyms ("DJ") and Hebrew titles stay untouched.
+    .replace(/\S+/g, function(word){
+      return word.replace(/[A-Za-zÀ-ÖØ-öø-ÿ]/, function(ch){ return ch.toUpperCase(); });
+    });
 }
 
 /* ===== Songs: fetch + render aggregated list (JSONP — bypasses CORS) ===== */
@@ -884,7 +881,7 @@ function renderSongsList(data){
   var html = songs.map(function(s, i){
     var isTop5 = i < 5;
     var rank = isTop5 ? '👑' : (i+1);
-    var name = (s.name || '').replace(/[<>&]/g, function(c){ return {'<':'&lt;','>':'&gt;','&':'&amp;'}[c]; });
+    var name = normalizeSong(s.name).replace(/[<>&]/g, function(c){ return {'<':'&lt;','>':'&gt;','&':'&amp;'}[c]; });
     return '<li class="' + (isTop5 ? 'top5' : '') + '">' +
              '<span class="rank">' + rank + '</span>' +
              '<span class="song-name">' + name + '</span>' +
@@ -1054,8 +1051,7 @@ function renderSongsList(data){
     'DTSTAMP:' + fmt(now),'DTSTART:' + fmt(start),'DTEND:'   + fmt(end),
     'SUMMARY:גגלר 30 — Tropical Rooftop Party 🌴🌇',
     'DESCRIPTION:מסיבת גג טרופית לחגוג 30. שקיעה\\, מוזיקה עם DJ Edry\\, דרינקים\\, פיצות. קוד לבוש: טרופי/חוף. השתתפות: 120₪ בביט/פייבוקס 054-7523288.',
-    'LOCATION:חיים ויטאל 12\\, קומה 4\\, תל אביב (פלורנטין)',
-    'GEO:32.0556;34.7706',
+    'LOCATION:מתחם O2O YOURSHOP\\, רחוב 3320\\, 101\\, תל אביב (מאחורי התחייה 16)',
     'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY',
     'DESCRIPTION:גגלר 30 — מחר על הגג!','END:VALARM',
     'END:VEVENT','END:VCALENDAR'
@@ -1161,7 +1157,7 @@ function renderSongsList(data){
     text: 'גגלר 30 — Tropical Rooftop Party',
     dates: '20260606T133000Z/20260606T200000Z',
     details: 'מסיבת גג טרופית לחגוג 30 — דרינקים, פיצות, DJ Edry, שקיעה על הגג. קוד לבוש: טרופי/חוף. השתתפות: 120₪ (ביט/פייבוקס 054-7523288).',
-    location: 'חיים ויטאל 12, קומה 4, תל אביב',
+    location: 'מתחם O2O YOURSHOP, רחוב 3320, 101, תל אביב (מאחורי התחייה 16)',
     ctz: 'Asia/Jerusalem'
   };
   var qs = Object.keys(params).map(function(k){
@@ -1174,7 +1170,7 @@ function renderSongsList(data){
   var btn = document.getElementById('copy-addr');
   var lbl = document.getElementById('copy-addr-text');
   if (!btn || !lbl) return;
-  var addr = 'חיים ויטאל 12, קומה 4, תל אביב (פלורנטין)';
+  var addr = 'מתחם O2O YOURSHOP, רחוב 3320, 101, תל אביב (מאחורי התחייה 16)';
   btn.addEventListener('click', async function(){
     try {
       await navigator.clipboard.writeText(addr);
@@ -1398,7 +1394,7 @@ function renderSongsList(data){
   btn.addEventListener('click', function(){
     var url = window.location.origin + window.location.pathname;
     if (!url.endsWith('/')) url += '/';
-    var msg = '🍹 מוזמנים לגגלר 30 — Tropical Rooftop Party 🌴\n06.06.26 · 16:30 · פלורנטין\n\n' + url;
+    var msg = '🍹 מוזמנים לגגלר 30 — Tropical Rooftop Party 🌴\n06.06.26 · 16:30 · O2O YOURSHOP, ת״א\n\n' + url;
     var waUrl = 'https://wa.me/?text=' + encodeURIComponent(msg);
     window.open(waUrl, '_blank', 'noopener');
     if (window.__galerMiniConfetti){
